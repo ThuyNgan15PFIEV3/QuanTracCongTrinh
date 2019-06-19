@@ -1,6 +1,40 @@
 <%- include('./layouts/head.ejs') %>
 
     <body>
+        <!-- Left panel -->
         <%- include('./layouts/menu.ejs') %>
-            <%- include('./layouts/navbar.ejs') %>
-                <%- include('./layouts/end.ejs') %>
+            <!-- right panel -->
+            <div id="right-panel" class="right-panel">
+                <%- include('./layouts/navbar.ejs') %>
+                    <div class="content mt-3">
+                        <div class="animated fadeIn">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h4>Hình ảnh</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <!-- <div class="map" id="basic-map"></div> -->
+                                            <img src="https://znews-photo.zadn.vn/w660/Uploaded/xpcwvovb/2017_06_23/chot1498144503140.jpg" alt="Smiley face" width="550" height="450">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h4>Bản đồ</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15305.20581238664!2d107.604433!3d16.4602666!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8b723b4287e23ab9!2zQ8O0bmcgdHkgQ-G7lSBQaOG6p24gVGjhu6d5IMSRaeG7h24gQWxpbiAy!5e0!3m2!1svi!2s!4v1560931374082!5m2!1svi!2s"
+                                                width="550" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+            <%- include('./layouts/end.ejs') %>
