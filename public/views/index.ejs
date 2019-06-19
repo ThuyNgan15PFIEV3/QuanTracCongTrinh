@@ -1,67 +1,91 @@
 <!DOCTYPE HTML>
 <html>
-<head>  
-<script>
-window.onload = function () {
-}
-</script>
-</head>
-<body>
-<div id="chartContainer" style="height: 100%; width: 100%;"></div>
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
-<script>
-function modifyData (data) {
-	var newData = [];	
-	for (var j = 1; j < 9; j ++) {
-		var dataPoints = [];
-		for (var i = 0; i < data.length; i++) {
-			var tmp = {
-				label: data[i].Time.substring(11, 19),
-				y: data[i]['Temp_' + j]
-			};
-			dataPoints.push(tmp);
-		}
-		newData.push({
-			type: 'line',
-			dataPoints: dataPoints
-		});
-	}
-	return newData;
-}
-(function() {
-	setInterval(function(){ 
-		$.ajax({
-       		url: "http://localhost:3000/getData",
-	        type: "GET",
-	        success: function(data) {  
-	          console.log(data); 
-	          	if (!data.data.recordset) return;
-	          	try {
-	          		data.data.recordset = JSON.parse(data.data.recordset);
-	          	} catch(e) {
-	          	}
-	            var newData = modifyData(data.data.recordset)
-	            var chart = new CanvasJS.Chart("chartContainer", {
-					animationEnabled: false,
-					theme: "light2",
-					title:{
-						text: "QUAN TRẮC CÔNG TRÌNH"
-					},
-					axisY:{
-						includeZero: false
-					},
-					data: newData
-				});
-				chart.render();
-	        	},
-	        error: function(data) {
-	            console.log(data);
-	        }
-	    });
-	}, 500);
-})();
-</script>
+<head>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css">
+    <script>
+        window.onload = function() {}
+    </script>
+</head>
+
+<body>
+    <div id="chart-container" style="height: 100%; width: 100%;">
+        <canvas id="chartContainer"></canvas>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+
+    <script>
+        var isFirst = true;
+        var result = {
+            labels: [],
+            datasets: []
+        }
+
+        function getDifferColor(j) {
+            var result = 'rgba(' + parseInt(Math.random() * 255) + ',' + parseInt(Math.random() * 255) + ',' + parseInt(Math.random() * 255) + ',0.5)';
+            return result;
+        }
+
+        function modifyData(data) {
+            if (isFirst) {
+                isFirst = false;
+                for (var j = 1; j < 9; j++) {
+                    result.datasets.push({
+                        label: 'Temp_' + j,
+                        backgroundColor: 'rgba(255, 255, 255, 0)',
+                        borderColor: getDifferColor(j),
+                        data: []
+                    })
+                }
+            } else {
+                result.labels = [];
+                for (var j = 1; j < 9; j++) {
+                    result.datasets[j - 1].data = [];
+                }
+            }
+            var newData = [];
+            for (var i = 0; i < data.length; i++) {
+                result.labels.push(data[i].Time.substring(11, 19));
+                for (var j = 1; j < 9; j++) {
+                    result.datasets[j - 1].data.push(data[i]['Temp_' + j]);
+                }
+            }
+            return result;
+        }
+        (function() {
+            setInterval(function() {
+                $.ajax({
+                    url: "http://localhost:3000/getData",
+                    type: "GET",
+                    success: function(data) {
+                        console.log(data);
+                        if (!data.data.recordset) return;
+                        try {
+                            data.data.recordset = JSON.parse(data.data.recordset);
+                        } catch (e) {}
+                        var newData = modifyData(data.data.recordset)
+                        console.log(newData);
+                        var ctx = $("#chartContainer");
+                        var chart = new Chart(ctx, {
+                            animation: false,
+                            type: 'line',
+                            data: newData,
+                            options: {
+                                animation: {
+                                    duration: 0
+                                }
+                            }
+                        });
+                    },
+                    error: function(data) {
+                        console.log(data);
+                    }
+                });
+            }, 1000);
+        })();
+    </script>
 </body>
+
 </html>
