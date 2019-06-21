@@ -9,8 +9,17 @@ export default class ChartController {
         res.render('index', {title: 'Homepage'});
     };
     homepage = async (req, res, next)=> {
-            res.render('homepage', {title: 'Homepage'});    
+            res.render('TongQuan', {
+                pageTitle: 'Tong quan',
+                path: '/'
+            });  
     };
+    lichSuBangBieu = async (req, res, next)=> {
+        res.render('LichSuBangBieu', {
+            pageTitle: 'Lich su bang bieu',
+            path: '/LichSuBangBieu'
+        });  
+};
     getData = async (req, res, next)=> {      
         conn.connect(function () {
             try {
