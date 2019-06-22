@@ -11,5 +11,8 @@ module.exports = (app) => {
     app.route('/delete/:id')
         .delete(chartController.deleteData);
     app.route('/')
-        .get(chartController.homepage);     
+        .get(chartController.homepage); 
+    app.route('/LichSuBangBieu')
+        .get(chartController.lichSuBangBieu); 
+
 }

@@ -1,0 +1,99 @@
+<%- include('./layouts/head.ejs') %>
+
+    <body>
+        <!-- Left panel -->
+        <%- include('./layouts/menu.ejs') %>
+            <!-- right panel -->
+            <div id="right-panel" class="right-panel">
+                <%- include('./layouts/navbar.ejs') %>
+                    <div class="breadcrumbs">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="tab" href="#home">Thông tin thủy điện ALin</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#menu1">Bố trí chung</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tab-content">
+                        <div id="home" class="container tab-pane active"><br>
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h4>Hình ảnh</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <!-- <div class="map" id="basic-map"></div> -->
+                                            <img src="https://znews-photo.zadn.vn/w660/Uploaded/xpcwvovb/2017_06_23/chot1498144503140.jpg" alt="Bản đồ" width="550" height="450">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h4>Bản đồ</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15305.20581238664!2d107.604433!3d16.4602666!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8b723b4287e23ab9!2zQ8O0bmcgdHkgQ-G7lSBQaOG6p24gVGjhu6d5IMSRaeG7h24gQWxpbiAy!5e0!3m2!1svi!2s!4v1560931374082!5m2!1svi!2s"
+                                                frameborder="0" style="border:0" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="menu1" class="container tab-pane fade"><br>
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                    <label><b>CHỌN LOẠI CẢM BIẾN</b></label>
+                                    <select name="sensor">
+                                        <option value="1">Mốc mặt nền đất</option>
+                                        <option value="2">Lún sâu</option>
+                                        <option value="3">Mốc mặt nền bê tông</option>
+                                        <option value="4">Biến dạng khe co giãn</option>
+                                        <option value="5">Áp lực kẽ rỗng</option>
+                                        <option value="6">Áp lực mạch động</option>
+                                        <option value="7">Ứng suất cốt thép</option>
+                                        <option value="8">Cột nước</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                    <label><b>CHỌN MẶT CẮT</b></label>
+                                    <select name="section">
+                                        <option value="1">Tuyến số 1</option>
+                                        <option value="2">Tuyến số 2</option>
+                                        <option value="3">Tuyến số 3</option>
+                                        <option value="4">Tuyến số 4</option>
+                                        <option value="5">Tuyến số 5</option>
+                                        <option value="6">Tuyến số 6</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                    <div class="card-body card-block">
+                                        <label>Cảm biến 1 </label><input type="text" name="sensor1" value="23" style="width:30%;background-color: red;"><br>
+                                        <label>Cảm biến 2 </label><input type="text" name="sensor2" value="432" style="width:30%;background-color: green;"><br>
+                                        <label>Cảm biến 3 </label><input type="text" name="sensor3" value="222" style="width:30%;background-color: blue;"><br>
+                                        <label>Cảm biến 4 </label><input type="text" name="sensor4" value="543" style="width:30%;background-color: purple;"><br>
+                                        <label>Cảm biến 5 </label><input type="text" name="sensor5" value="344" style="width:30%;background-color: yellow;"><br>
+                                    </div>
+                                </div>
+                                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                                    <img src="https://hoc24.vn/images/summary/50.png" style="width: 100%;height: 100%;" />
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <script src="https://maps.googleapis.com/maps/api/js?v=3&sensor=false"></script>
+                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2jlT6C_to6X1mMvR9yRWeRvpIgTXgddM"></script>
+                    <script src="../js/lib/gmap/gmaps.js"></script>
+                    <script src="../js/lib/gmap/gmap.init.js"></script>
+                    <%- include('./layouts/end.ejs') %>
