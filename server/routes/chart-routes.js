@@ -14,5 +14,10 @@ module.exports = (app) => {
         .get(chartController.homepage); 
     app.route('/LichSuBangBieu')
         .get(chartController.lichSuBangBieu); 
-
+    app.route('/BangBieu')
+        .get(chartController.BangBieu);
+    app.route('/Users')
+        .get(chartController.Users);
+    app.route('/BaoCao')
+        .get(chartController.BaoCao); 
 }
