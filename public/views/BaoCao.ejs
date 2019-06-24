@@ -1,0 +1,54 @@
+<%- include('./layouts/head.ejs') %>
+    <body>
+        <!-- Left panel -->
+        <%- include('./layouts/menu.ejs') %>
+            <!-- right panel -->
+            <div id="right-panel" class="right-panel">
+                <%- include('./layouts/navbar.ejs') %>
+                 <div class="breadcrumbs">
+                    <div class="col-sm-4">
+                        <div class="page-header float-left">
+                            <div class="page-title">
+                                <h1><%= pageTitle %></h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="content mt-3">
+              <div class="animated fadeIn">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="card">
+                      <div class="card-header">In báo cáo</div>
+                      <div class="card-body card-block">
+                        <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                          <div class="row form-group">
+                            <div class="col col-md-3"><label for="select" class=" form-control-label">Loại báo cáo</label></div>
+                            <div class="col-12 col-md-3">
+                              <select name="select" id="select" class="form-control">
+                                <option value="1">Báo cáo tuần</option>
+                                <option value="2">Báo cáo tháng</option>
+                              </select>
+                            </div>
+                            <div class="col col-md-3"><label for="select" class=" form-control-label">Định dạng dữ liệu</label></div>
+                            <div class="col-12 col-md-3">
+                              <select name="select" id="select" class="form-control">
+                                <option value="1">PDF</option>
+                                <option value="2">Excel</option>
+                              </select>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="card-footer">
+                        <button type="submit" class="btn btn-primary btn-sm">
+                          <i class="fa fa-dot-circle-o"></i> In báo cáo
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- .animated -->
+            </div><!-- .content -->
+            </div>
+                    <%- include('./layouts/end.ejs') %>
