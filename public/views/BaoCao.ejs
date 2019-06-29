@@ -21,7 +21,7 @@
                     <div class="card">
                       <div class="card-header">In báo cáo</div>
                       <div class="card-body card-block">
-                        <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                        <form id="exportDocx" action="/expDocx" method="GET" class="form-horizontal">
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="select" class=" form-control-label">Loại báo cáo</label></div>
                             <div class="col-12 col-md-3">
@@ -41,7 +41,7 @@
                         </form>
                       </div>
                       <div class="card-footer">
-                        <button type="submit" class="btn btn-primary btn-sm">
+                        <button type="submit" onclick="$('#exportDocx').submit();" class="btn btn-primary btn-sm">
                           <i class="fa fa-dot-circle-o"></i> In báo cáo
                         </button>
                       </div>
