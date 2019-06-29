@@ -1,6 +1,7 @@
 'use strict';
 
 import {chartController} from '../controllers';
+import {exportController} from '../controllers';
 const sql = require ('mssql');
 
 module.exports = (app) => {
@@ -19,5 +20,7 @@ module.exports = (app) => {
     app.route('/Users')
         .get(chartController.Users);
     app.route('/BaoCao')
-        .get(chartController.BaoCao); 
+        .get(chartController.BaoCao);
+    app.route('/expDocx')
+        .get(exportController.expDocx);
 }
