@@ -1,5 +1,5 @@
 const sql = require('mssql');
-const conn = require('../config/db-config')();
+const conn = require('../config/db-config');
 const JSZip = require('jszip');
 const Docxtemplater = require('docxtemplater');
 const fs = require('fs');
@@ -7,17 +7,17 @@ const path = require('path');
 
 export default class ExportController {
     expDocx = async(req, res, next) => {
-        conn.connect(function() {
+        sql.connect(conn, function() {
             try {
                 let sqlQuery = "SELECT TOP 100 * FROM [GD2_NHIETDO] ORDER BY ID DESC";
-                let req = new sql.Request(conn);
+                let req = new sql.Request();
                 req.query(sqlQuery, function(err, data) {
                     if (err) {
-                        conn.close();
+                        sql.close();
                         console.log(err.message);
                         res.sendStatus(500);
                     } else {
-                        conn.close();
+                        sql.close();
                         var content = fs
                             .readFileSync(path.resolve('', './templates/export-template.docx'), 'binary');
                         var zip = new JSZip(content);
@@ -38,7 +38,7 @@ export default class ExportController {
                     }
                 })
             } catch (e) {
-                conn.close();
+                sql.close();
                 console.log(e.message);
                 res.sendStatus(500);
             }

@@ -4,10 +4,10 @@ const sql = require('mssql');
 const conn = require('../config/db-config');
 export default class DataController {
     BangBieu = async(req, res, next) => {
-        await sql.connect(conn, function() {
+        sql.connect(conn, function() {
             try {
                 let sqlQuery = "SELECT TOP 100 * FROM [GD2_NHIETDO] ORDER BY ID DESC";
-                let req = await new sql.Request();
+                let req = new sql.Request();
                 req.query(sqlQuery, function(err, data) {
                     if (err) {
                         sql.close();
@@ -32,7 +32,7 @@ export default class DataController {
     };
 
     getData = async(req, res, next) => {
-        await sql.connect(conn, function(err) {
+        sql.connect(conn, function(err) {
             if (err) {
                 console.log("Error while connecting database :- " + err);
                 res.send(err);
@@ -60,7 +60,7 @@ export default class DataController {
                 console.log("Error while connecting database :- " + err);
                 res.send(err);
             } else {
-                let req = await new sql.Request();
+                let req = new sql.Request();
                 req.input('startDay', sql.DateTime, startDay);
                 req.input('endDay', sql.DateTime, endDay);
                 // query to the database

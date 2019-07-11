@@ -1,5 +1,13 @@
+import DataController from './data-controller';
+import ExportController from './export-controller';
+import LoadPageController from './loadPage-controller';
+import ObjController from './obj-controller';
+import WarningController from './warning-controller';
 
-import ChartController from './chart-controller';
 module.exports = {
-    chartController: new ChartController(),
+    dataController: new DataController(),
+    exportController: new ExportController(),
+    loadPageController: new LoadPageController(),
+    objController: new ObjController(),
+    warningController: new WarningController()
 };
