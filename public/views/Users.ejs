@@ -1,0 +1,131 @@
+<%- include('./layouts/head.ejs') %>
+    <body>
+        <!-- Left panel -->
+        <%- include('./layouts/menu.ejs') %>
+            <!-- right panel -->
+            <div id="right-panel" class="right-panel">
+                <%- include('./layouts/navbar.ejs') %>
+                 <div class="breadcrumbs">
+                    <div class="col-sm-4">
+                        <div class="page-header float-left">
+                            <div class="page-title">
+                                <h1><%= pageTitle %></h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="content mt-3">
+              <div class="animated fadeIn">
+                <div class="row">
+                  <div class="col-lg-5">
+                    <div class="card">
+                      <div class="card-header">Thêm mới</div>
+                      <div class="card-body card-block">
+                        <form action="" method="post" class="">
+                          <div class="form-group">
+                            <div class="input-group">
+                              <input type="text" id="fullname" name="fullname" placeholder="Họ và tên" class="form-control">
+                              <div class="input-group-addon"><i class="fa fa-comment"></i></div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="input-group">
+                              <input type="text" id="username" name="username" placeholder="Tên đăng nhập" class="form-control">
+                              <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="input-group">
+                              <input type="password" id="password2" name="password2" placeholder="Mật khẩu" class="form-control">
+                              <div class="input-group-addon"><i class="fa fa-asterisk"></i></div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="input-group">
+                              <input type="email" id="email2" name="email2" placeholder="Email" class="form-control">
+                              <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="input-group">
+                              <input type="text" id="address" name="address" placeholder="Địa chỉ" class="form-control">
+                              <div class="input-group-addon"><i class="fa fa-map-marker"></i></div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="input-group">
+                              <input type="text" id="phone" name="phone" placeholder="Số điện thoại" class="form-control">
+                              <div class="input-group-addon"><i class="fa fa-phone"></i></div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="input-group">
+                              <input type="text" id="mobile" name="mobile" placeholder="Di động" class="form-control">
+                              <div class="input-group-addon"><i class="fa fa-mobile"></i></div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="input-group">
+                              <input type="text" id="fax" name="fax" placeholder="Số Fax" class="form-control">
+                              <div class="input-group-addon"><i class="fa fa-reply"></i></div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="input-group">
+                              <input type="text" id="position" name="position" placeholder="Chức vụ" class="form-control">
+                              <div class="input-group-addon"><i class="fa fa-briefcase"></i></div>
+                            </div>
+                          </div>
+                          <div class="form-actions form-group"><button type="submit" class="btn btn-secondary btn-sm">Thêm</button></div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-7">
+                    <div class="card">
+                      <div class="card-header">Danh sách người dùng</div>
+                      <div class="card-body card-block">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th>ID</th>
+                              <th>Tên đăng nhập</th>
+                              <th>Họ tên</th>
+                              <th>Địa chỉ</th>
+                              <th>Chức vụ</th>
+                              <th>Action</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>3</td>
+                              <td>Admin</td>
+                              <td>Quản trị hệ thống</td>
+                              <td>Số 2 Ngọc Hà Ba Đình</td>
+                              <td></td>
+                              <td>
+                                  <a class="btn btn-primary" href="#" role="button"><i class="fa fa-pencil"></i></a>
+                                  <a class="btn btn-danger" href="#" role="button"><i class="fa fa-trash-o"></i></a>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>30</td>
+                              <td>testTieuchuan</td>
+                              <td>test tiêu chuẩn</td>
+                              <td></td>
+                              <td></td>
+                              <td>
+                                  <a class="btn btn-primary" href="#" role="button"><i class="fa fa-pencil"></i></a>
+                                  <a class="btn btn-danger" href="#" role="button"><i class="fa fa-trash-o"></i></a>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- .animated -->
+            </div><!-- .content -->
+            </div>
+                    <%- include('./layouts/end.ejs') %>
