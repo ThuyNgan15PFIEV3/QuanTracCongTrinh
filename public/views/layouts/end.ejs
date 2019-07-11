@@ -2,7 +2,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
 <script src="../../js/plugins.js"></script>
 <script src="../../js/main.js"></script>
-<script src="../../js/lib/chart-js/chart.js"></script>
+<!-- <script src="../../js/lib/chart-js/chart.js"></script> -->
 <!-- <script src="../../js/dashboard.js"></script> -->
 <!-- <script src="../../js/widgets.js"></script> -->
 <script src="../../js/lib/vector-map/jquery.vmap.js"></script>
@@ -23,22 +23,181 @@
 <script src="../../js/lib/data-table/buttons.colVis.min.js"></script>
 <script src="../../js/lib/data-table/datatables-init.js"></script>
 <script>
-    (function($) {
-        "use strict";
+    var isFirst = true;
+    var result = {
+        labels: [],
+        datasets: []
+    }
 
-        jQuery('#vmap').vectorMap({
-            map: 'world_en',
-            backgroundColor: null,
-            color: '#ffffff',
-            hoverOpacity: 0.7,
-            selectedColor: '#1de9b6',
-            enableZoom: true,
-            showTooltip: true,
-            values: sample_data,
-            scaleColors: ['#1de9b6', '#03a9f5'],
-            normalizeFunction: 'polynomial'
+    function getDifferColor(j) {
+        var result = 'rgba(' + parseInt(Math.random() * 255) + ',' + parseInt(Math.random() * 255) + ',' + parseInt(Math.random() * 255) + ',0.5)';
+        return result;
+    }
+
+    function modifyData(data) {
+        if (isFirst) {
+            isFirst = false;
+            for (var j = 1; j < 9; j++) {
+                result.datasets.push({
+                    label: 'Temp_' + j,
+                    backgroundColor: 'rgba(255, 255, 255, 0)',
+                    borderColor: getDifferColor(j),
+                    data: []
+                })
+            }
+        } else {
+            result.labels = [];
+            for (var j = 1; j < 9; j++) {
+                result.datasets[j - 1].data = [];
+            }
+        }
+        var newData = [];
+        for (var i = 0; i < data.length; i++) {
+            result.labels.push(data[i].Time.substring(11, 19));
+            for (var j = 1; j < 9; j++) {
+                result.datasets[j - 1].data.push(data[i]['Temp_' + j]);
+            }
+        }
+        return result;
+    }
+    (function() {
+        setInterval(function() {
+            $.ajax({
+                url: "http://localhost:3000/getData",
+                type: "GET",
+                success: function(data) {
+                    console.log(data);
+                    if (!data.data.recordset) return;
+                    try {
+                        data.data.recordset = JSON.parse(data.data.recordset);
+                    } catch (e) {}
+                    var newData = modifyData(data.data.recordset)
+                    console.log(newData);
+                    var ctx = $("#chartContainer");
+                    var chart = new Chart(ctx, {
+                        animation: false,
+                        type: 'line',
+                        data: newData,
+                        options: {
+                            animation: {
+                                duration: 0
+                            }
+                        }
+                    });
+                },
+                error: function(data) {
+                    console.log(data);
+                }
+            });
+        }, 1000);
+    })();
+    var isFirst = true;
+    var result = {
+        labels: [],
+        datasets: []
+    }
+
+    function getDifferColor(j) {
+        var result = 'rgba(' + parseInt(Math.random() * 255) + ',' + parseInt(Math.random() * 255) + ',' + parseInt(Math.random() * 255) + ',0.5)';
+        return result;
+    }
+
+    function modifyData(data) {
+        if (isFirst) {
+            isFirst = false;
+            for (var j = 1; j < 9; j++) {
+                result.datasets.push({
+                    label: 'Temp_' + j,
+                    backgroundColor: 'rgba(255, 255, 255, 0)',
+                    borderColor: getDifferColor(j),
+                    data: []
+                })
+            }
+        } else {
+            result.labels = [];
+            for (var j = 1; j < 9; j++) {
+                result.datasets[j - 1].data = [];
+            }
+        }
+        var newData = [];
+        for (var i = 0; i < data.length; i++) {
+            result.labels.push(data[i].Time.substring(11, 19));
+            for (var j = 1; j < 9; j++) {
+                result.datasets[j - 1].data.push(data[i]['Temp_' + j]);
+            }
+        }
+        return result;
+    }
+    $(document).ready(function() {
+        $("#submitSelect").on('click', function() {
+            console.log($("#startDay").val());
+            console.log($("#endDay").val());
+            $.ajax({
+                url: "http://localhost:3000/getDataOption",
+                type: "POST",
+                data: {
+                    startDay: $("#startDay").val(),
+                    endDay: $("#endDay").val()
+                        // startDay: '2018-02-03T00:00:00.000Z',
+                        // endDay: '2018-02-20T00:00:00.000Z'
+                },
+                success: function(data) {
+                    console.log(data);
+                    if (!data.data.recordset) return;
+                    try {
+                        data.data.recordset = JSONd.parse(data.data.recordset);
+                    } catch (e) {}
+                    var newData = modifyData(data.data.recordset)
+                    console.log(newData);
+                    var ctx = $("#chartContainer");
+                    var chart = new Chart(ctx, {
+                        animation: false,
+                        type: 'line',
+                        data: newData,
+                        options: {
+                            animation: {
+                                duration: 0
+                            }
+                        }
+                    });
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
         });
-    })(jQuery);
+    });
+    (function() {
+        setInterval(function() {
+            $.ajax({
+                url: "http://localhost:3000/getData",
+                type: "GET",
+                success: function(data) {
+                    console.log(data);
+                    if (!data.data.recordset) return;
+                    try {
+                        data.data.recordset = JSON.parse(data.data.recordset);
+                    } catch (e) {}
+                    var newData = modifyData(data.data.recordset)
+                    console.log(newData);
+                    var ctx = $("#chartContainer");
+                    var chart = new Chart(ctx, {
+                        animation: false,
+                        type: 'line',
+                        data: newData,
+                        options: {
+                            animation: {
+                                duration: 0
+                            }
+                        }
+                    });
+                },
+                error: function(data) {
+                    console.log(data);
+                }
+            });
+        }, 1000);
+    })();
 </script>
 </body>
 
