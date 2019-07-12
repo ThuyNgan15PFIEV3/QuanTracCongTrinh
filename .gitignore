@@ -68,7 +68,6 @@ public/dist/*
 package-lock.json
 public/sso/*
 server/config/cert/*
-*.json
 !server/locales/en.json
 !package.json
 scripts
