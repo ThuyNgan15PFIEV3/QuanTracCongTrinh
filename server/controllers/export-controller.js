@@ -8,9 +8,23 @@ const path = require('path');
 
 export default class ExportController {
     expDocx = async(req, res, next) => {
+        var option = req.query.select;
+        var numberDay;
+        if(option == 1){
+            option = "Báo cáo tuần";
+            var date = new Date();
+            var day = date.getDay();
+            if(day == 0) numberDay = 7;
+            else numberDay = day;
+        }
+        else{
+            option = "Báo cáo tháng";
+            var date = new Date();
+            numberDay = date.getDate();
+        }
         sql.connect(conn, function() {
             try {
-                let sqlQuery = "SELECT TOP 100 * FROM [GD2_NHIETDO] ORDER BY ID DESC";
+                let sqlQuery = "SELECT TOP "+ numberDay +" * FROM [GD2_NHIETDO] ORDER BY ID DESC";
                 let req = new sql.Request();
                 req.query(sqlQuery, function(err, data) {
                     if (err) {
@@ -18,6 +32,7 @@ export default class ExportController {
                         console.log(err.message);
                         res.sendStatus(500);
                     } else {
+                        data["option"] = option;
                         sql.close();
                         var content = fs
                             .readFileSync(path.resolve('', './templates/export-template.docx'), 'binary');
@@ -34,8 +49,8 @@ export default class ExportController {
                         }
                         var buf = doc.getZip()
                             .generate({ type: 'nodebuffer' });
-                        fs.writeFileSync(path.resolve('', './templates/WeeklyReport.docx'), buf);
-                        res.download('./templates/WeeklyReport.docx');
+                        fs.writeFileSync(path.resolve('', './templates/Report.docx'), buf);
+                        res.download('./templates/Report.docx');
                     }
                 })
             } catch (e) {
