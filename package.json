@@ -16,24 +16,35 @@
     "body-parser": "^1.18.3",
     "chart.js": "^2.8.0",
     "cors": "^2.8.4",
+<<<<<<< HEAD
     "docxtemplater": "^3.12.0",
+=======
+    "docxtemplater": "^3.13.5",
+>>>>>>> ThuyNgan
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "fs-extra": "^6.0.1",
     "git": "^0.1.5",
     "i": "^0.3.6",
     "jsonwebtoken": "^8.3.0",
+<<<<<<< HEAD
     "jszip": "^2.6.1",
+=======
+    "jszip": "^3.2.2",
+>>>>>>> ThuyNgan
     "lowdb": "^1.0.0",
     "mogoose": "^3.1.8",
     "mongoose": "^5.5.3",
     "mssql": "^5.1.0",
+    "nexmo": "^2.4.1",
+    "nodemailer": "^6.2.1",
     "path": "^0.12.7",
     "pg": "^7.4.3",
     "pug": "^2.0.3",
     "request": "^2.83.0",
     "sequelize": "^4.43.2",
     "sequelize-cli": "^5.4.0",
+    "socketio": "^1.0.0",
     "winston": "^3.0.0",
     "winston-daily-rotate-file": "^3.2.3",
     "yarn": "^1.15.2"
