@@ -60,11 +60,15 @@ export default class DataController {
                 console.log("Error while connecting database :- " + err);
                 res.send(err);
             } else {
-                let req = new sql.Request();
-                req.input('startDay', sql.DateTime, startDay);
-                req.input('endDay', sql.DateTime, endDay);
+                let request = new sql.Request();
+                let startDay = new Date(req.body.startDay);
+                let endDay = new Date(req.body.endDay);
+                console.log(startDay);
+                console.log(endDay);
+                request.input('startDay', sql.DateTime, startDay);
+                request.input('endDay', sql.DateTime, endDay);
                 // query to the database
-                req.query("SELECT * FROM [GD2_NHIETDO] WHERE Time BETWEEN @startDay AND @endDay ", function(err, result) {
+                request.query("SELECT * FROM [GD2_NHIETDO] WHERE Time BETWEEN @startDay AND @endDay ", function(err, result) {
                     if (err) {
                         sql.close();
                         console.log("Error while querying database :- " + err);
