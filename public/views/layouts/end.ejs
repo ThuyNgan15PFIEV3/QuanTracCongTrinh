@@ -63,7 +63,7 @@
             console.log($("#startDay").val());
             console.log($("#endDay").val());
             $.ajax({
-                url: "http://localhost:3000/getDataOption",
+                url: "http://localhost:3000/api/option_lunsau",
                 type: "POST",
                 data: {
                     startDay: $("#startDay").val(),
