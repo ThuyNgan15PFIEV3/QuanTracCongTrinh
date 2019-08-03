@@ -7,8 +7,6 @@
 <script src="../../js/lib/vector-map/jquery.vmap.min.js"></script>
 <script src="../../js/lib/vector-map/jquery.vmap.sampledata.js"></script>
 <script src="../../js/lib/vector-map/country/jquery.vmap.world.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
 <script src="../../js/lib/data-table/datatables.min.js"></script>
 <script src="../../js/lib/data-table/dataTables.bootstrap.min.js"></script>
 <script src="../../js/lib/data-table/dataTables.buttons.min.js"></script>
@@ -20,114 +18,6 @@
 <script src="../../js/lib/data-table/buttons.print.min.js"></script>
 <script src="../../js/lib/data-table/buttons.colVis.min.js"></script>
 <script src="../../js/lib/data-table/datatables-init.js"></script>
-<script>
-    var isFirst = true;
-    var result = {
-        labels: [],
-        datasets: []
-    }
 
-    function getDifferColor(j) {
-        var result = 'rgba(' + parseInt(Math.random() * 255) + ',' + parseInt(Math.random() * 255) + ',' + parseInt(Math.random() * 255) + ',0.5)';
-        return result;
-    }
-
-    function modifyData(data) {
-        if (isFirst) {
-            isFirst = false;
-            for (var j = 1; j < 9; j++) {
-                result.datasets.push({
-                    label: 'Temp_' + j,
-                    backgroundColor: 'rgba(255, 255, 255, 0)',
-                    borderColor: getDifferColor(j),
-                    data: []
-                })
-            }
-        } else {
-            result.labels = [];
-            for (var j = 1; j < 9; j++) {
-                result.datasets[j - 1].data = [];
-            }
-        }
-        var newData = [];
-        for (var i = 0; i < data.length; i++) {
-            result.labels.push(data[i].Time);
-            for (var j = 1; j < 9; j++) {
-                result.datasets[j - 1].data.push(data[i]['Temp_' + j]);
-            }
-        }
-        return result;
-    }
-    $(document).ready(function() {
-        $("#submitSelect").on('click', function() {
-            console.log($("#startDay").val());
-            console.log($("#endDay").val());
-            $.ajax({
-                url: "http://localhost:3000/api/option_lunsau",
-                type: "POST",
-                data: {
-                    startDay: $("#startDay").val(),
-                    endDay: $("#endDay").val()
-                        // startDay: '2018-02-03T00:00:00.000Z',
-                        // endDay: '2018-02-20T00:00:00.000Z'
-                },
-                success: function(data) {
-                    console.log(data);
-                    if (!data.data.recordset) return;
-                    try {
-                        data.data.recordset = JSONd.parse(data.data.recordset);
-                    } catch (e) {}
-                    var newData = modifyData(data.data.recordset)
-                    console.log(newData);
-                    var ctx = $("#chartContainer");
-                    var chart = new Chart(ctx, {
-                        animation: false,
-                        type: 'line',
-                        data: newData,
-                        options: {
-                            animation: {
-                                duration: 0
-                            }
-                        }
-                    });
-                },
-                error: function(error) {
-                    console.log(error);
-                }
-            });
-        });
-    });
-    (function() {
-        $.ajax({
-            url: "http://localhost:3000/getData",
-            type: "GET",
-            success: function(data) {
-                console.log(data);
-                if (!data.data.recordset) return;
-                try {
-                    data.data.recordset = JSON.parse(data.data.recordset);
-                } catch (e) {}
-                var newData = modifyData(data.data.recordset)
-                console.log(newData);
-                var ctx = $("#chartContainer");
-                var chart = new Chart(ctx, {
-                    animation: false,
-                    type: 'line',
-                    data: newData,
-                    options: {
-                        animation: {
-                            duration: 0
-                        }
-                    }
-                });
-            },
-            error: function(data) {
-                console.log(data);
-            }
-        });
-
-    })();
-</script>
-</body>
 
 </html>

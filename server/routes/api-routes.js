@@ -5,36 +5,87 @@ import { dataController, exportController, objController, warningController, loa
 const sql = require('mssql');
 
 module.exports = (app) => {
-    app.route('/api/lunsau')
-        .get(dataController.getData_Lunsau);
-    app.route('/api/biendangkhecogian')
-        .get(dataController.getData_Biendangkhecogian);
-    app.route('/api/apluckerong')
-        .get(dataController.getData_Apluckerong);
-    app.route('/api/quantractham')
-        .get(dataController.getData_Quantractham);
-    app.route('/api/aplucmachdong')
-        .get(dataController.getData_Aplucmachdong);
-    app.route('/api/ungsuatcotthep')
-        .get(dataController.getData_Ungsuatcotthep);
+    app.route('/api/lunSau_tatCa')
+        .get(dataController.getData_LunSau_TatCa);
+    app.route('/api/bienDangKheCoGian_tatCa')
+        .get(dataController.getData_BienDangKheCoGian_TatCa);
+    app.route('/api/apLucKeRong_tatCa')
+        .get(dataController.getData_ApLucKeRong_TatCa);
+    app.route('/api/QuanTracTham_tatCa')
+        .get(dataController.getData_QuanTracTham_TatCa);
+    app.route('/api/apLucMachDong_tatCa')
+        .get(dataController.getData_ApLucMachDong_TatCa);
+    app.route('/api/ungSuatCotThep_tatCa')
+        .get(dataController.getData_UngSuatCotThep_TatCa);
 
-    app.route('/api/option_lunsau')
-        .post(dataController.getDataOption_Lunsau);
-    app.route('/api/option_biendangkhecogian')
-        .post(dataController.getDataOption_Biendangkhecogian);
-    app.route('/api/option_apluckerong')
-        .post(dataController.getDataOption_Apluckerong);
-    app.route('/api/option_quantractham')
-        .post(dataController.getDataOption_Quantractham);
-    app.route('/api/option_aplucmachdong')
-        .post(dataController.getDataOption_Aplucmachdong);
-    app.route('/api/option_ungsuatcotthep')
-        .post(dataController.getDataOption_Ungsuatcotthep);
+
+    app.route('/api/lunSau')
+        .post(dataController.getData_LunSau);
+    app.route('/api/bienDangKheCoGian')
+        .post(dataController.getData_BienDangKheCoGian);
+    app.route('/api/apLucKeRong')
+        .post(dataController.getData_ApLucKeRong);
+    app.route('/api/QuanTracTham')
+        .post(dataController.getData_QuanTracTham);
+    app.route('/api/apLucMachDong')
+        .post(dataController.getData_ApLucMachDong);
+    app.route('/api/ungSuatCotThep')
+        .post(dataController.getData_UngSuatCotThep);
+
+    app.route('/api/option_lunSau')
+        .post(dataController.getDataOption_LunSau);
+    app.route('/api/option_bienDangKheCoGian')
+        .post(dataController.getDataOption_BienDangKheCoGian);
+    app.route('/api/option_apLucKeRong')
+        .post(dataController.getDataOption_ApLucKeRong);
+    app.route('/api/option_quanTracTham')
+        .post(dataController.getDataOption_QuanTracTham);
+    app.route('/api/option_apLucMachDong')
+        .post(dataController.getDataOption_ApLucMachDong);
+    app.route('/api/option_ungSuatCotThep')
+        .post(dataController.getDataOption_UngSuatCotThep);
+
+    app.route('/api/option_lunSau_tuyen')
+        .post(dataController.getDataOption_LunSau_Tuyen);
+    app.route('/api/option_bienDangKheCoGian_tuyen')
+        .post(dataController.getDataOption_BienDangKheCoGian_Tuyen);
+    app.route('/api/option_apLucKeRong_tuyen')
+        .post(dataController.getDataOption_ApLucKeRong_Tuyen);
+    app.route('/api/option_quanTracTham_tuyen')
+        .post(dataController.getDataOption_QuanTracTham_Tuyen);
+    app.route('/api/option_apLucMachDong_tuyen')
+        .post(dataController.getDataOption_ApLucMachDong_Tuyen);
+    app.route('/api/option_ungSuatCotThep_tuyen')
+        .post(dataController.getDataOption_UngSuatCotThep_Tuyen);
+
+    app.route('/api/selectType_lunSau')
+        .get(dataController.selectType_LunSau);
+    app.route('/api/selectType_bienDangKheCoGian')
+        .get(dataController.selectType_BienDangKheCoGian);
+    app.route('/api/selectType_apLucKeRong')
+        .get(dataController.selectType_ApLucKeRong);
+    app.route('/api/selectType_quanTracTham')
+        .get(dataController.selectType_QuanTracTham);
+    app.route('/api/selectType_ungSuatCotThep')
+        .get(dataController.selectType_UngSuatCotThep);
+    app.route('/api/selectType_apLucMachDong')
+        .get(dataController.selectType_ApLucMachDong);
 
     app.route('/')
         .get(loadPageController.homepage);
-    app.route('/LichSuBangBieu')
-        .get(loadPageController.lichSuBangBieu);
+    app.route('/LichSuBangBieu/LunSau')
+        .get(loadPageController.lichSuBangBieu_LunSau);
+    app.route('/LichSuBangBieu/BienDangKheCoGian')
+        .get(loadPageController.lichSuBangBieu_BienDangKheCoGian);
+    app.route('/LichSuBangBieu/ApLucKeRong')
+        .get(loadPageController.lichSuBangBieu_ApLucKeRong);
+    app.route('/LichSuBangBieu/QuanTracTham')
+        .get(loadPageController.lichSuBangBieu_QuanTracTham);
+    app.route('/LichSuBangBieu/ApLucMachDong')
+        .get(loadPageController.lichSuBangBieu_ApLucMachDong);
+    app.route('/LichSuBangBieu/UngSuatCotThep')
+        .get(loadPageController.lichSuBangBieu_UngSuatCotThep);
+
     app.route('/BangBieu')
         .get(dataController.BangBieu);
     app.route('/Users')
@@ -54,5 +105,6 @@ module.exports = (app) => {
         .post(userController.login);
     app.route('/signup')
         .post(userController.createNewUser);
+
 
 }

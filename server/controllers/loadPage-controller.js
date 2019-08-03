@@ -7,10 +7,40 @@ export default class LoadPageController {
             path: '/'
         });
     };
-    lichSuBangBieu = async(req, res, next) => {
-        res.render('LichSuBangBieu', {
-            pageTitle: 'Lich su bang bieu',
-            path: '/LichSuBangBieu'
+    lichSuBangBieu_LunSau = async(req, res, next) => {
+        res.render('LichSuBangBieu_LunSau', {
+            pageTitle: 'Lún sâu',
+            path: '/LichSuBangBieu/LunSau'
+        });
+    };
+    lichSuBangBieu_BienDangKheCoGian = async(req, res, next) => {
+        res.render('LichSuBangBieu_BienDangKheCoGian', {
+            pageTitle: 'Biến dạng khe co giãn',
+            path: '/LichSuBangBieu/BienDangKheCoGian'
+        });
+    };
+    lichSuBangBieu_ApLucKeRong = async(req, res, next) => {
+        res.render('LichSuBangBieu_ApLucKeRong', {
+            pageTitle: 'Áp lực kẻ rỗng',
+            path: '/LichSuBangBieu/ApLucKeRong'
+        });
+    };
+    lichSuBangBieu_QuanTracTham = async(req, res, next) => {
+        res.render('LichSuBangBieu_QuanTracTham', {
+            pageTitle: 'Quan trắc thấm',
+            path: '/LichSuBangBieu/QuanTracTham'
+        });
+    };
+    lichSuBangBieu_ApLucMachDong = async(req, res, next) => {
+        res.render('LichSuBangBieu_ApLucMachDong', {
+            pageTitle: 'Áp lực mạch động',
+            path: '/LichSuBangBieu/ApLucMachDong'
+        });
+    };
+    lichSuBangBieu_UngSuatCotThep = async(req, res, next) => {
+        res.render('LichSuBangBieu_UngSuatCotThep', {
+            pageTitle: 'Ứng suất cốt thép',
+            path: '/LichSuBangBieu/UngSuatCotThep'
         });
     };
     Users = async(req, res, next) => {
