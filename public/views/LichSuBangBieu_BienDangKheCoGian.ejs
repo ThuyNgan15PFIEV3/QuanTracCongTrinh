@@ -103,6 +103,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
     <script>
+        var chart;
         var isFirst = true;
         var result = {
             labels: [],
@@ -115,6 +116,12 @@
         }
 
         function modifyData(data) {
+            // let count = 0;
+            // for (var c in data[0]) {
+            //     count = count + 1;
+            // }
+            // console.log(count);
+
             if (isFirst) {
                 isFirst = false;
                 for (var j = 1; j < 5; j++) {
@@ -157,6 +164,9 @@
                 });
             });
             $("#submitSelect").on('click', function() {
+                if (chart != undefined) {
+                    chart.destroy();
+                }
                 let serialNum = $('#serialNum').val();
                 let section = $("#section").val();
                 let startDay = $("#startDay").val();
@@ -179,7 +189,7 @@
                             var newData = modifyData(data.data.recordset)
                             console.log(newData);
                             var ctx = $("#chartContainer_LunSau");
-                            var chart = new Chart(ctx, {
+                            chart = new Chart(ctx, {
                                 animation: false,
                                 type: 'line',
                                 data: newData,
@@ -215,7 +225,7 @@
                             var newData = modifyData(data.data.recordset)
                             console.log(newData);
                             var ctx = $("#chartContainer_LunSau");
-                            var chart = new Chart(ctx, {
+                            chart = new Chart(ctx, {
                                 animation: false,
                                 type: 'line',
                                 data: newData,
@@ -251,7 +261,7 @@
                             var newData = modifyData(data.data.recordset)
                             console.log(newData);
                             var ctx = $("#chartContainer_LunSau");
-                            var chart = new Chart(ctx, {
+                            chart = new Chart(ctx, {
                                 animation: false,
                                 type: 'line',
                                 data: newData,
@@ -282,7 +292,7 @@
                     var newData = modifyData(data.data.recordset)
                     console.log(newData);
                     var ctx = $("#chartContainer_LunSau");
-                    var chart = new Chart(ctx, {
+                    chart = new Chart(ctx, {
                         animation: false,
                         type: 'line',
                         data: newData,

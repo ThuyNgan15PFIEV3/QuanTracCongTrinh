@@ -105,27 +105,28 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
     <script>
+        var chart;
         var isFirst = true;
-        var result_TatCa = {
+        var result = {
             labels: [],
             datasets: []
         }
-        var result_TuyChon = {
-            labels1: [],
-            datasets1: []
-        }
-
 
         function getDifferColor(j) {
             var result = 'rgba(' + parseInt(Math.random() * 255) + ',' + parseInt(Math.random() * 255) + ',' + parseInt(Math.random() * 255) + ',0.5)';
             return result;
         }
 
-        function modifyData_TatCa(data) {
+        function modifyData(data) {
+            // var count = 0;
+            // for (var c in data[1]) {
+            //     count = count + 1;
+            // }
+            // console.log(count);
             if (isFirst) {
                 isFirst = false;
                 for (var j = 1; j < 28; j++) {
-                    result_TatCa.datasets.push({
+                    result.datasets.push({
                         label: 'Lunsau' + j,
                         backgroundColor: 'rgba(255, 255, 255, 0)',
                         borderColor: getDifferColor(j),
@@ -133,46 +134,19 @@
                     })
                 }
             } else {
-                result_TatCa.labels = [];
+                result.labels = [];
                 for (var j = 1; j < 28; j++) {
-                    result_TatCa.datasets[j - 1].data = [];
+                    result.datasets[j - 1].data = [];
                 }
             }
             var newData = [];
             for (var i = 0; i < data.length; i++) {
-                result_TatCa.labels.push(data[i].Timestamp);
+                result.labels.push(data[i].Timestamp);
                 for (var j = 1; j < 28; j++) {
-                    result_TatCa.datasets[j - 1].data.push(data[i]['Lunsau' + j]);
+                    result.datasets[j - 1].data.push(data[i]['Lunsau' + j]);
                 }
             }
-            return result_TatCa;
-        }
-
-        function modifyData_TuyChon(data) {
-            if (isFirst) {
-                isFirst = false;
-                for (var j = 1; j < 28; j++) {
-                    result_TatCa.datasets.push({
-                        label: 'Lunsau' + j,
-                        backgroundColor: 'rgba(255, 255, 255, 0)',
-                        borderColor: getDifferColor(j),
-                        data: []
-                    })
-                }
-            } else {
-                result_TatCa.labels = [];
-                for (var j = 1; j < 28; j++) {
-                    result_TatCa.datasets[j - 1].data = [];
-                }
-            }
-            var newData = [];
-            for (var i = 0; i < data.length; i++) {
-                result_TatCa.labels.push(data[i].Timestamp);
-                for (var j = 1; j < 28; j++) {
-                    result_TatCa.datasets[j - 1].data.push(data[i]['Lunsau' + j]);
-                }
-            }
-            return result_TatCa;
+            return result;
         }
 
         $(document).ready(function() {
@@ -191,7 +165,10 @@
                 });
             });
             $("#submitSelect").on('click', function() {
+                if (chart != undefined) {
+                    chart.destroy();
 
+                }
                 let serialNum = $('#serialNum').val();
                 let section = $("#section").val();
                 let startDay = $("#startDay").val();
@@ -206,15 +183,14 @@
                         url: "http://localhost:3000/api/lunSau_tatCa",
                         type: "GET",
                         success: function(data) {
-
                             if (!data.data.recordset) return;
                             try {
                                 data.data.recordset = JSON.parse(data.data.recordset);
                             } catch (e) {}
-                            var newData = modifyData_TatCa(data.data.recordset)
+                            var newData = modifyData(data.data.recordset)
                             console.log(newData);
                             var ctx = $("#chartContainer_LunSau");
-                            var chart = new Chart(ctx, {
+                            chart = new Chart(ctx, {
                                 animation: false,
                                 type: 'line',
                                 data: newData,
@@ -231,7 +207,6 @@
                     });
 
                 } else if (serialNum == '0') {
-                    $("#chartContainer_LunSau").removeData();
                     $.ajax({
                         cache: false,
                         url: "http://localhost:3000/api/option_lunSau_tuyen",
@@ -250,10 +225,10 @@
                             try {
                                 data.data.recordset = JSONd.parse(data.data.recordset);
                             } catch (e) {}
-                            var newData = modifyData_TuyChon(data.data.recordset)
+                            var newData = modifyData(data.data.recordset)
                             console.log(newData);
                             var ctx = $("#chartContainer_LunSau");
-                            var chart = new Chart(ctx, {
+                            chart = new Chart(ctx, {
                                 animation: false,
                                 type: 'line',
                                 data: newData,
@@ -290,10 +265,10 @@
                             try {
                                 data.data.recordset = JSONd.parse(data.data.recordset);
                             } catch (e) {}
-                            var newData = modifyData_TuyChon(data.data.recordset)
+                            var newData = modifyData(data.data.recordset)
                             console.log(newData);
                             var ctx = $("#chartContainer_LunSau");
-                            var chart = new Chart(ctx, {
+                            chart = new Chart(ctx, {
                                 animation: false,
                                 type: 'line',
                                 data: newData,
@@ -312,7 +287,6 @@
             });
         });
         (function() {
-
             $.ajax({
                 url: "http://localhost:3000/api/lunSau_tatCa",
                 type: "GET",
@@ -322,10 +296,10 @@
                     try {
                         data.data.recordset = JSON.parse(data.data.recordset);
                     } catch (e) {}
-                    var newData = modifyData_TatCa(data.data.recordset)
+                    var newData = modifyData(data.data.recordset)
                     console.log(newData);
                     var ctx = $("#chartContainer_LunSau");
-                    var chart = new Chart(ctx, {
+                    chart = new Chart(ctx, {
                         animation: false,
                         type: 'line',
                         data: newData,
