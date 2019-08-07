@@ -71,3 +71,4 @@ server/config/cert/*
 !server/locales/en.json
 !package.json
 scripts
+!templates/export-template.docx

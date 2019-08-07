@@ -23,15 +23,26 @@
                       <div class="card-body card-block">
                         <form id="exportDocx" action="/expDocx" method="GET" class="form-horizontal">
                           <div class="row form-group">
-                            <div class="col col-md-3"><label for="select" class=" form-control-label">Loại báo cáo</label></div>
-                            <div class="col-12 col-md-3">
-                              <select name="select" id="select" class="form-control">
+                            <div class="col col-md-2"><label for="select" class=" form-control-label">Loại báo cáo</label></div>
+                            <div class="col-12 col-md-2">
+                              <select name="option" id="option" class="form-control">
                                 <option value="1">Báo cáo tuần</option>
                                 <option value="2">Báo cáo tháng</option>
                               </select>
                             </div>
-                            <div class="col col-md-3"><label for="select" class=" form-control-label">Định dạng dữ liệu</label></div>
-                            <div class="col-12 col-md-3">
+                            <div class="col col-md-2"><label for="select" class=" form-control-label">Loại cảm biến</label></div>
+                            <div class="col-12 col-md-2">
+                              <select name="sensor" id="sensor" class="form-control">
+                                <option value="lunsau">Lún sâu</option>
+                                <option value="biendangkhecogian">Biến dạng khe co giãn</option>
+                                <option value="apluckerong">Áp lực kẽ rỗng</option>
+                                <option value="quantractham">Quan trắc thấm</option>
+                                <option value="aplucmachdong">Áp lực mạch động</option>
+                                <option value="ungsuatcotthep">Ứng suất cốt thép</option>
+                              </select>
+                            </div>
+                            <div class="col col-md-2"><label for="select" class=" form-control-label">Định dạng dữ liệu</label></div>
+                            <div class="col-12 col-md-2">
                               <select name="type" id="type" class="form-control">
                                 <option value="1">DOCX</option>
                               </select>
