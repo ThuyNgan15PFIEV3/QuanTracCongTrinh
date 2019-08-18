@@ -85,6 +85,9 @@ module.exports = (app) => {
         .get(loadPageController.lichSuBangBieu_ApLucMachDong);
     app.route('/LichSuBangBieu/UngSuatCotThep')
         .get(loadPageController.lichSuBangBieu_UngSuatCotThep);
+    app.route('/TongQuan/BoTriChung')
+        .get(loadPageController.boTriChung);
+
 
     app.route('/BangBieu')
         .get(dataController.BangBieu);

@@ -128,8 +128,9 @@
                 for (var j = 1; j < 28; j++) {
                     result.datasets.push({
                         label: 'Lunsau' + j,
-                        backgroundColor: 'rgba(255, 255, 255, 0)',
+                        backgroundColor: getDifferColor(j),
                         borderColor: getDifferColor(j),
+                        fill: false,
                         data: []
                     })
                 }
@@ -141,7 +142,7 @@
             }
             var newData = [];
             for (var i = 0; i < data.length; i++) {
-                result.labels.push(data[i].Timestamp);
+                result.labels.push(data[i].Timestamp.split(3, 9));
                 for (var j = 1; j < 28; j++) {
                     result.datasets[j - 1].data.push(data[i]['Lunsau' + j]);
                 }
@@ -167,7 +168,6 @@
             $("#submitSelect").on('click', function() {
                 if (chart != undefined) {
                     chart.destroy();
-
                 }
                 let serialNum = $('#serialNum').val();
                 let section = $("#section").val();
@@ -302,7 +302,7 @@
                     chart = new Chart(ctx, {
                         animation: false,
                         type: 'line',
-                        data: newData,
+                        // data: newData,
                         options: {
                             animation: {
                                 duration: 0

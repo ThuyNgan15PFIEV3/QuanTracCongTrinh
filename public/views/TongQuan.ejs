@@ -49,95 +49,210 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="menu1" class="container tab-pane fade"><br>
-                            <div class="row" style="margin-bottom:10px">
-                                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                                    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                                        <label><b>LOẠI CẢM BIẾN</b></label>
-                                    </div>
-                                    <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-                                        <select name="sensor" class="form-control">
-                                                <option value="1">Mốc mặt nền đất</option>
-                                                <option value="2">Lún sâu</option>
-                                                <option value="3">Mốc mặt nền bê tông</option>
-                                                <option value="4">Biến dạng khe co giãn</option>
-                                                <option value="5">Áp lực kẽ rỗng</option>
-                                                <option value="6">Áp lực mạch động</option>
-                                                <option value="7">Ứng suất cốt thép</option>
-                                                <option value="8">Cột nước</option>
-                                            </select>
-                                    </div>
+                        <div id="menu1" class=" tab-pane fade"><br>
+                            <!-- <div class='zoom'>
+                                <img src="../images/matCat.jpg" alt="Snow" id='ex2' onclick="point_it(event)" style="width:100%">
+                                <button class="dot" id="dot1"></button>
+                                <button class="dot" id="dot2"></button>
+                                <button class="dot" id="dot3"></button>
+                                <button class="dot" id="dot4"></button>
+                                <button class="dot" id="dot5"></button>
+                                <button class="dot" id="dot6"></button>
 
-                                </div>
-                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                                        <label><b>MẶT CẮT</b></label>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                        <select name="section" class="form-control">
-                                                <option value="1">Tuyến số 1</option>
-                                                <option value="2">Tuyến số 2</option>
-                                                <option value="3">Tuyến số 3</option>
-                                                <option value="4">Tuyến số 4</option>
-                                                <option value="5">Tuyến số 5</option>
-                                                <option value="6">Tuyến số 6</option>
-                                            </select>
-                                    </div>
+
+                            </div> -->
+                            <!-- <div class="container" class='zoom' id='ex2'>
+                                <img src="../images/matCat.jpg" alt="Snow" id="img" onclick="point_it(event)" style="width:100%">
+                                <button class="dot" id="dot1"></button>
+                                <button class="dot" id="dot2"></button>
+                                <button class="dot" id="dot3"></button>
+                                <button class="dot" id="dot4"></button>
+                                <button class="dot" id="dot5"></button>
+                                <button class="dot" id="dot6"></button>
+                            </div> -->
+                            <div class="container">
+                                <div id="slide">
+                                    <img src="../images/matCat.jpg" onclick="point_it(event)" style="width:100%">
+                                    <button class="dot" id="dot1"></button>
+                                    <button class="dot" id="dot2"></button>
+                                    <button class="dot" id="dot3"></button>
+                                    <button class="dot" id="dot4"></button>
+                                    <button class="dot" id="dot5"></button>
+                                    <button class="dot" id="dot6"></button>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2" style="margin-top: 50px">
-                                    <div class="row" style="margin-bottom: 8px">
-                                        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-                                            <label>Cảm biến 1 </label>
-                                        </div>
-                                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                                            <span class="label sensor1">232</span>
-                                        </div>
-                                    </div>
-                                    <div class="row" style="margin-bottom: 8px">
-                                        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-                                            <label>Cảm biến 2 </label>
-                                        </div>
-                                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                                            <span class="label sensor2">543</span>
-                                        </div>
-                                    </div>
-                                    <div class="row" style="margin-bottom: 8px">
-                                        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-                                            <label>Cảm biến 3 </label>
-                                        </div>
-                                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                                            <span class="label sensor3">342</span>
-                                        </div>
-                                    </div>
-                                    <div class="row" style="margin-bottom: 8px">
-                                        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-                                            <label>Cảm biến 4 </label>
-                                        </div>
-                                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                                            <span class="label sensor4">654</span>
-                                        </div>
-                                    </div>
-                                    <div class="row" style="margin-bottom: 8px">
-                                        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-                                            <label>Cảm biến 5 </label>
-                                        </div>
-                                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                                            <span class="label sensor5">432</span>
-                                        </div>
-                                    </div>
+
+                            <div id="myModal1" class="modal">
+                                <!-- Modal content -->
+                                <div class="modal-content">
+                                    <span class="close" id="close1">&times;</span>
+                                    <p>Vui lòng lựa chọn cảm biến</p>
+                                    <select name="sensor" id="sensor">
+                                      <option value="Lun sau">Lún sâu</option>
+                                      <option value="Bien dang khe co dan">Biến dạng khe co giãn</option>
+                                      <option value="Ap luc ke rong">Áp lực kẽ rỗng</option>
+                                      <option value="Quan trac tham">Quan trắc thấm</option>
+                                      <option value="Ap luc mach dong">Áp lực mạch động</option>
+                                      <option value="Ung suat cot thep">Ứng suất cốt thép</option>
+                                  </select>
+                                    <button id="btnSensor">Chọn</button>
                                 </div>
-                                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10" style="text-align: center">
-                                    <img src="https://hoc24.vn/images/summary/50.png" style="width: 90%;height: 100%;" />
+
+                            </div>
+                            <div id="myModal2" class="modal">
+                                <!-- Modal content -->
+                                <div class="container modal-image" id="modal-image">
+                                    <span class="close" id="close2">&times;</span>
+                                    <div id="slide">
+                                        <img src="../images/LunSau01.jpg" onclick="point_it_sensor(event)" style="width:100%" />
+                                    </div>
+                                    <!-- <button class="dot" id="dot1-1" onmouseover='$("#myModal3").show();' onmouseout='$("#myModal3").hide();'></button>
+                                        <div id="myModal3" class="modal">
+                                            <div class="modal-content">
+                                                <p>Hello</p>
+                                            </div>
+                                        </div> -->
                                 </div>
                             </div>
 
                         </div>
 
                     </div>
+                    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-zoom/1.7.21/jquery.zoom.js'></script>
+                    <!-- <script>
+                        function point_it(event) {
+                            pos_x = event.offsetX ? (event.offsetX) : event.pageX - document.getElementById("img").offsetLeft;
+                            pos_y = event.offsetY ? (event.offsetY) : event.pageY - document.getElementById("img").offsetTop;
+                            console.log(pos_x + "," + pos_y);
+                        }
+                        $(document).ready(function() {
+                            // $('#ex1').zoom();
+                            $('#ex2').zoom({
+                                on: 'grab'
+                            });
+                            $('#ex3').zoom({
+                                on: 'click'
+                            });
+                            $('#ex4').zoom({
+                                on: 'toggle'
+                            });
+
+                        });
+                        $(document).ready(function() {
+                            $("dot").hover(function() {
+                                console.log("ff");
+                            }, function() {
+                                $(this).css("background-color", "yellow");
+                            });
+                        });
+                    </script> -->
+                    <script>
+                        function point_it(event) {
+                            pos_x = event.offsetX ? (event.offsetX) : event.pageX - document.getElementById("modal-image").offsetLeft;
+                            pos_y = event.offsetY ? (event.offsetY) : event.pageY - document.getElementById("modal-image").offsetTop;
+                            console.log(pos_x + "," + pos_y);
+                        }
+
+                        function point_it_sensor(event) {
+                            pos_x = event.offsetX ? (event.offsetX) : event.pageX - document.getElementById("modal-image").offsetLeft;
+                            pos_y = event.offsetY ? (event.offsetY) : event.pageY - document.getElementById("modal-image").offsetTop;
+                            console.log(pos_x + "," + pos_y);
+                        }
+
+                        $(document).ready(function() {
+                            let sensor = $("#sensor").val();
+                            var scroll_zoom = new ScrollZoom($('.container'), 4, 0.5);
+                            $("#dot1").click(function() {
+                                $("#myModal1").css({
+                                    display: "block"
+                                });
+                            });
+                            $("#btnSensor").on('click', function() {
+                                if (sensor == "Lun sau") {
+                                    $("#myModal2").css({
+                                        display: "block"
+                                    });
+                                }
+                            });
+                            $("#close2").click(function() {
+                                $("#myModal2").css({
+                                    display: "none"
+                                });
+                            });
+                            $("#close1").click(function() {
+                                $("#myModal1").css({
+                                    display: "none"
+                                });
+                            });
+                        });
+
+                        function ScrollZoom(container, max_scale, factor) {
+                            var target = container.children().first()
+                            var size = {
+                                w: target.width(),
+                                h: target.height()
+                            }
+                            var pos = {
+                                x: 0,
+                                y: 0
+                            }
+                            var zoom_target = {
+                                x: 0,
+                                y: 0
+                            }
+                            var zoom_point = {
+                                x: 0,
+                                y: 0
+                            }
+                            var scale = 1
+                            target.css('transform-origin', '0 0')
+                            target.on("mousewheel DOMMouseScroll", scrolled)
+
+                            function scrolled(e) {
+                                var offset = container.offset()
+                                zoom_point.x = e.pageX - offset.left
+                                zoom_point.y = e.pageY - offset.top
+
+                                e.preventDefault();
+                                var delta = e.delta || e.originalEvent.wheelDelta;
+                                if (delta === undefined) {
+                                    //we are on firefox
+                                    delta = e.originalEvent.detail;
+                                }
+                                delta = Math.max(-1, Math.min(1, delta)) // cap the delta to [-1,1] for cross browser consistency
+
+                                // determine the point on where the slide is zoomed in
+                                zoom_target.x = (zoom_point.x - pos.x) / scale
+                                zoom_target.y = (zoom_point.y - pos.y) / scale
+
+                                // apply zoom
+                                scale += delta * factor * scale
+                                scale = Math.max(1, Math.min(max_scale, scale))
+
+                                // calculate x and y based on zoom
+                                pos.x = -zoom_target.x * scale + zoom_point.x
+                                pos.y = -zoom_target.y * scale + zoom_point.y
+
+
+                                // Make sure the slide stays in its container area when zooming out
+                                if (pos.x > 0)
+                                    pos.x = 0
+                                if (pos.x + size.w * scale < size.w)
+                                    pos.x = -size.w * (scale - 1)
+                                if (pos.y > 0)
+                                    pos.y = 0
+                                if (pos.y + size.h * scale < size.h)
+                                    pos.y = -size.h * (scale - 1)
+
+                                update()
+                            }
+
+                            function update() {
+                                target.css('transform', 'translate(' + (pos.x) + 'px,' + (pos.y) + 'px) scale(' + scale + ',' + scale + ')')
+                            }
+                        }
+                    </script>
                     <script src="https://maps.googleapis.com/maps/api/js?v=3&sensor=false"></script>
                     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2jlT6C_to6X1mMvR9yRWeRvpIgTXgddM"></script>
-                    <script src="../js/lib/gmap/gmaps.js"></script>
-                    <script src="../js/lib/gmap/gmap.init.js"></script>
+
                     <%- include('./layouts/end.ejs') %>

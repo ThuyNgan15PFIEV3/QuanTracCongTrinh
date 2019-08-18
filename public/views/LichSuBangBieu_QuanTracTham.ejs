@@ -110,12 +110,54 @@
         var result = {
             labels: [],
             datasets: []
-        }
+        };
+        // var result1 = {
+        //     labels1: [],
+        //     datasets1: []
+        // };
 
         function getDifferColor(j) {
-            var result = 'rgba(' + parseInt(Math.random() * 255) + ',' + parseInt(Math.random() * 255) + ',' + parseInt(Math.random() * 255) + ',0.5)';
-            return result;
+            var color = 'rgba(' + parseInt(Math.random() * 255) + ',' + parseInt(Math.random() * 255) + ',' + parseInt(Math.random() * 255) + ',0.5)';
+            return color;
         }
+
+        // function modifyData_option(data) {
+        //     // let count = 0;
+        //     // for (var c in data[0]) {
+        //     //     count = count + 1;
+        //     // }
+        //     // console.log(count);
+        //     let lab = Object.keys(data[0])[1];
+        //     console.log(lab);
+        //     if (isFirst) {
+        //         isFirst = false;
+        //         for (var j = 1; j < 2; j++) {
+        //             result.datasets.push({
+        //                 label: lab,
+        //                 backgroundColor: getDifferColor(j),
+        //                 borderColor: getDifferColor(j),
+        //                 borderWidth: 2,
+        //                 pointRadius: 1,
+        //                 pointHoverRadius: 3,
+        //                 fill: false,
+        //                 data: []
+        //             })
+        //         }
+        //     } else {
+        //         result.labels = [];
+        //         for (var j = 1; j < 2; j++) {
+        //             result.datasets[j - 1].data = [];
+        //         }
+        //     }
+        //     var newData = [];
+        //     for (var i = 0; i < data.length; i++) {
+        //         result.labels.push(data[i].Timestamp);
+        //         for (var j = 1; j < 2; j++) {
+        //             result.datasets[j - 1].data.push(data[i][lab]);
+        //         }
+        //     }
+        //     return result;
+        // }
 
         function modifyData(data) {
             // let count = 0;
@@ -123,27 +165,34 @@
             //     count = count + 1;
             // }
             // console.log(count);
+            let lab = Object.keys(data[0])[1];
+            console.log(lab);
             if (isFirst) {
                 isFirst = false;
-                for (var j = 1; j < 37; j++) {
+                for (var j = 1; j < 2; j++) {
                     result.datasets.push({
-                        label: 'Tham' + j,
-                        backgroundColor: 'rgba(255, 255, 255, 0)',
+                        // label: 'Tham' + j,
+                        label: lab,
+                        backgroundColor: getDifferColor(j),
                         borderColor: getDifferColor(j),
+                        borderWidth: 2,
+                        pointRadius: 1,
+                        pointHoverRadius: 3,
+                        fill: false,
                         data: []
                     })
                 }
             } else {
                 result.labels = [];
-                for (var j = 1; j < 37; j++) {
+                for (var j = 1; j < 2; j++) {
                     result.datasets[j - 1].data = [];
                 }
             }
             var newData = [];
             for (var i = 0; i < data.length; i++) {
                 result.labels.push(data[i].Timestamp);
-                for (var j = 1; j < 37; j++) {
-                    result.datasets[j - 1].data.push(data[i]['Tham' + j]);
+                for (var j = 1; j < 2; j++) {
+                    result.datasets[j - 1].data.push(data[i][lab]);
                 }
             }
             return result;

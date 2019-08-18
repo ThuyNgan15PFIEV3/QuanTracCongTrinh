@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 30%;
+        }
+        
+        .modal-image {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 90%;
+            align-content: center
+        }
+        
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .container {
+            position: relative;
+            width: 1200px;
+            height: 600px;
+            overflow: hidden;
+        }
+        
+        #slide {
+            width: 100%;
+            height: 100%;
+            transition: transform .3s;
+        }
+        
+        img {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+        }
+        
+        .container #slide .dot {
+            position: absolute;
+            height: 15px;
+            width: 15px;
+            background-color: red;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        
+        .container #slide #dot1 {
+            left: 271px;
+            top: 116px;
+        }
+        
+        .container #slide #dot2 {
+            left: 523px;
+            top: 114px;
+        }
+        
+        .container #slide #dot3 {
+            left: 829px;
+            top: 114px;
+        }
+        
+        .container #slide #dot5 {
+            left: 775px;
+            top: 114px;
+        }
+        
+        .container #slide #dot4 {
+            left: 969px;
+            top: 114px;
+        }
+        
+        .container #slide #dot6 {
+            left: 880px;
+            top: 115px;
+        }
+        
+        .container #dot1-1 {
+            left: 425px;
+            top: 680px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="slide">
+            <img src="../images/matCat.jpg" onclick="point_it(event)" style="width:100%">
+            <button class="dot" id="dot1"></button>
+            <button class="dot" id="dot2"></button>
+            <button class="dot" id="dot3"></button>
+            <button class="dot" id="dot4"></button>
+            <button class="dot" id="dot5"></button>
+            <button class="dot" id="dot6"></button>
+        </div>
+    </div>
+
+    <div id="myModal1" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close" id="close1">&times;</span>
+            <p>Vui lòng lựa chọn cảm biến</p>
+            <select name="sensor" id="sensor">
+          <option value="Lun sau">Lún sâu</option>
+          <option value="Bien dang khe co dan">Biến dạng khe co giãn</option>
+          <option value="Ap luc ke rong">Áp lực kẽ rỗng</option>
+          <option value="Quan trac tham">Quan trắc thấm</option>
+          <option value="Ap luc mach dong">Áp lực mạch động</option>
+          <option value="Ung suat cot thep">Ứng suất cốt thép</option>
+      </select>
+            <button id="btnSensor">Chọn</button>
+        </div>
+
+    </div>
+    <div id="myModal2" class="modal">
+        <!-- Modal content -->
+        <div class="container modal-image" id="modal-image">
+            <span class="close" id="close2">&times;</span>
+            <div id="slide">
+                <img src="../images/LunSau01.jpg" onclick="point_it_sensor(event)" style="width:100%" />
+            </div>
+            <!-- <button class="dot" id="dot1-1" onmouseover='$("#myModal3").show();' onmouseout='$("#myModal3").hide();'></button>
+            <div id="myModal3" class="modal">
+                <div class="modal-content">
+                    <p>Hello</p>
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+</body>
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+<script src='jquery.zoom.js'></script>
+<script>
+    function point_it(event) {
+        pos_x = event.offsetX ? (event.offsetX) : event.pageX - document.getElementById("modal-image").offsetLeft;
+        pos_y = event.offsetY ? (event.offsetY) : event.pageY - document.getElementById("modal-image").offsetTop;
+        console.log(pos_x + "," + pos_y);
+    }
+
+    function point_it_sensor(event) {
+        pos_x = event.offsetX ? (event.offsetX) : event.pageX - document.getElementById("modal-image").offsetLeft;
+        pos_y = event.offsetY ? (event.offsetY) : event.pageY - document.getElementById("modal-image").offsetTop;
+        console.log(pos_x + "," + pos_y);
+    }
+
+    $(document).ready(function() {
+        let sensor = $("#sensor").val();
+        var scroll_zoom = new ScrollZoom($('.container'), 4, 0.5);
+        $("#dot1").click(function() {
+            $("#myModal1").css({
+                display: "block"
+            });
+        });
+        $("#btnSensor").on('click', function() {
+            if (sensor == "Lun sau") {
+                $("#myModal2").css({
+                    display: "block"
+                });
+            }
+        });
+        $("#close2").click(function() {
+            $("#myModal2").css({
+                display: "none"
+            });
+        });
+        $("#close1").click(function() {
+            $("#myModal1").css({
+                display: "none"
+            });
+        });
+    });
+
+    function ScrollZoom(container, max_scale, factor) {
+        var target = container.children().first()
+        var size = {
+            w: target.width(),
+            h: target.height()
+        }
+        var pos = {
+            x: 0,
+            y: 0
+        }
+        var zoom_target = {
+            x: 0,
+            y: 0
+        }
+        var zoom_point = {
+            x: 0,
+            y: 0
+        }
+        var scale = 1
+        target.css('transform-origin', '0 0')
+        target.on("mousewheel DOMMouseScroll", scrolled)
+
+        function scrolled(e) {
+            var offset = container.offset()
+            zoom_point.x = e.pageX - offset.left
+            zoom_point.y = e.pageY - offset.top
+
+            e.preventDefault();
+            var delta = e.delta || e.originalEvent.wheelDelta;
+            if (delta === undefined) {
+                //we are on firefox
+                delta = e.originalEvent.detail;
+            }
+            delta = Math.max(-1, Math.min(1, delta))
+
+            zoom_target.x = (zoom_point.x - pos.x) / scale
+            zoom_target.y = (zoom_point.y - pos.y) / scale
+
+            scale += delta * factor * scale
+            scale = Math.max(1, Math.min(max_scale, scale))
+
+            pos.x = -zoom_target.x * scale + zoom_point.x
+            pos.y = -zoom_target.y * scale + zoom_point.y
+
+            if (pos.x > 0)
+                pos.x = 0
+            if (pos.x + size.w * scale < size.w)
+                pos.x = -size.w * (scale - 1)
+            if (pos.y > 0)
+                pos.y = 0
+            if (pos.y + size.h * scale < size.h)
+                pos.y = -size.h * (scale - 1)
+
+            update()
+        }
+
+        function update() {
+            target.css('transform', 'translate(' + (pos.x) + 'px,' + (pos.y) + 'px) scale(' + scale + ',' + scale + ')')
+        }
+    }
+</script>
+
+</html>
