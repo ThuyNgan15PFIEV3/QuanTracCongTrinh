@@ -170,11 +170,6 @@
         console.log(pos_x + "," + pos_y);
     }
 
-    function point_it_sensor(event) {
-        pos_x = event.offsetX ? (event.offsetX) : event.pageX - document.getElementById("modal-image").offsetLeft;
-        pos_y = event.offsetY ? (event.offsetY) : event.pageY - document.getElementById("modal-image").offsetTop;
-        console.log(pos_x + "," + pos_y);
-    }
 
     $(document).ready(function() {
         let sensor = $("#sensor").val();

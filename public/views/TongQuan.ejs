@@ -100,7 +100,6 @@
 
                             </div>
                             <div id="myModal2" class="modal">
-                                <!-- Modal content -->
                                 <div class="container modal-image" id="modal-image">
                                     <span class="close" id="close2">&times;</span>
                                     <div id="slide">
@@ -119,41 +118,8 @@
 
                     </div>
                     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-zoom/1.7.21/jquery.zoom.js'></script>
-                    <!-- <script>
-                        function point_it(event) {
-                            pos_x = event.offsetX ? (event.offsetX) : event.pageX - document.getElementById("img").offsetLeft;
-                            pos_y = event.offsetY ? (event.offsetY) : event.pageY - document.getElementById("img").offsetTop;
-                            console.log(pos_x + "," + pos_y);
-                        }
-                        $(document).ready(function() {
-                            // $('#ex1').zoom();
-                            $('#ex2').zoom({
-                                on: 'grab'
-                            });
-                            $('#ex3').zoom({
-                                on: 'click'
-                            });
-                            $('#ex4').zoom({
-                                on: 'toggle'
-                            });
-
-                        });
-                        $(document).ready(function() {
-                            $("dot").hover(function() {
-                                console.log("ff");
-                            }, function() {
-                                $(this).css("background-color", "yellow");
-                            });
-                        });
-                    </script> -->
                     <script>
                         function point_it(event) {
-                            pos_x = event.offsetX ? (event.offsetX) : event.pageX - document.getElementById("modal-image").offsetLeft;
-                            pos_y = event.offsetY ? (event.offsetY) : event.pageY - document.getElementById("modal-image").offsetTop;
-                            console.log(pos_x + "," + pos_y);
-                        }
-
-                        function point_it_sensor(event) {
                             pos_x = event.offsetX ? (event.offsetX) : event.pageX - document.getElementById("modal-image").offsetLeft;
                             pos_y = event.offsetY ? (event.offsetY) : event.pageY - document.getElementById("modal-image").offsetTop;
                             console.log(pos_x + "," + pos_y);
@@ -216,25 +182,18 @@
                                 e.preventDefault();
                                 var delta = e.delta || e.originalEvent.wheelDelta;
                                 if (delta === undefined) {
-                                    //we are on firefox
                                     delta = e.originalEvent.detail;
                                 }
-                                delta = Math.max(-1, Math.min(1, delta)) // cap the delta to [-1,1] for cross browser consistency
-
-                                // determine the point on where the slide is zoomed in
+                                delta = Math.max(-1, Math.min(1, delta))
                                 zoom_target.x = (zoom_point.x - pos.x) / scale
                                 zoom_target.y = (zoom_point.y - pos.y) / scale
-
-                                // apply zoom
                                 scale += delta * factor * scale
                                 scale = Math.max(1, Math.min(max_scale, scale))
 
-                                // calculate x and y based on zoom
                                 pos.x = -zoom_target.x * scale + zoom_point.x
                                 pos.y = -zoom_target.y * scale + zoom_point.y
 
 
-                                // Make sure the slide stays in its container area when zooming out
                                 if (pos.x > 0)
                                     pos.x = 0
                                 if (pos.x + size.w * scale < size.w)
