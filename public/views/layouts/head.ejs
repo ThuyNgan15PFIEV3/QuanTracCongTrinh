@@ -5,67 +5,23 @@
 
 <head>
     <style>
+        body.modal-open {
+            overflow: hidden;
+            position: fixed;
+        }
+        
         .modal {
             display: none;
-            /* Hidden by default */
-            position: fixed;
-            /* Stay in place */
-            z-index: 1;
-            /* Sit on top */
-            padding-top: 50px;
-            /* Location of the box */
+            z-index: -1;
+            /* padding-top: 50px; */
             left: 0;
             top: 0;
             width: 100%;
-            /* Full width */
             height: 100%;
-            /* Full height */
             overflow: auto;
-            /* Enable scroll if needed */
             background-color: rgb(0, 0, 0);
-            /* Fallback color */
             background-color: rgba(0, 0, 0, 0.4);
-            /* Black w/ opacity */
-        }
-        /* Modal Content */
-        
-        .modal-content {
-            background-color: #fefefe;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 30%;
-        }
-        
-        .modal-image {
-            background-color: #fefefe;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 90%;
-            align-content: center
-        }
-        /* The Close Button */
-        
-        .close {
-            color: #aaaaaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-        
-        .close:hover,
-        .close:focus {
-            color: #000;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        
-        div #menu1 .container {
-            position: relative;
-            width: 1200px;
-            height: 600px;
-            overflow: hidden;
+            overflow-y: scroll
         }
         
         #slide {
@@ -74,95 +30,25 @@
             transition: transform .3s;
         }
         
-        img {
-            width: auto;
-            height: auto;
-            max-width: 100%;
-        }
-        /* .container img {
-                    width: 100%;
-                    height: auto;
-                } */
-        
-        div #menu1 .container #slide .dot {
-            position: absolute;
-            height: 15px;
-            width: 15px;
-            background-color: red;
-            border-radius: 50%;
-            display: inline-block;
-        }
-        
-        .container #slide #dot1 {
-            left: 271px;
-            top: 116px;
-        }
-        
-        .container #slide #dot2 {
-            left: 523px;
-            top: 114px;
-        }
-        
-        .container #slide #dot3 {
-            left: 829px;
-            top: 114px;
-        }
-        
-        .container #slide #dot5 {
-            left: 775px;
-            top: 114px;
-        }
-        
-        .container #slide #dot4 {
-            left: 969px;
-            top: 114px;
-        }
-        
-        .container #slide #dot6 {
-            left: 880px;
-            top: 115px;
-        }
-        
-        .container #dot1-1 {
-            left: 425px;
-            top: 680px;
-        }
-        
-        .container .btn:hover {
-            background-color: black;
-        }
-        
-        .zoom {
-            display: inline-block;
+        .contain {
+            margin-left: 12px;
             position: relative;
-        }
-        /* magnifying glass icon */
-        
-        .zoom:after {
-            content: '';
-            display: block;
-            width: 33px;
-            height: 33px;
-            position: absolute;
-            top: 0;
-            right: 0;
-            background: url(icon.png);
+            width: 1050px;
+            height: 700px;
+            overflow: hidden;
         }
         
-        .zoom img {
-            display: block;
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            background-color: lightgrey;
+            width: 50px;
+            border: 15px solid green;
+            padding: 50px;
+            margin: 20px;
         }
         
-        .zoom img::selection {
-            background-color: transparent;
-        }
-        
-        #ex2 img:hover {
-            cursor: url(grab.cur), default;
-        }
-        
-        #ex2 img:active {
-            cursor: url(grabbed.cur), default;
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
         }
     </style>
     <meta charset="utf-8">
@@ -180,9 +66,9 @@
     <link rel="stylesheet" href="../../css/flag-icon.min.css">
     <link rel="stylesheet" href="../../css/cs-skin-elastic.css">
     <link rel="stylesheet" href="../../css/map.css">
-
+    <link href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/accordion.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/accordion.min.js">
     <link rel="stylesheet" href="../../css/style.css">
-
     <link rel="stylesheet" href="assets/css/lib/datatable/dataTables.bootstrap.min.css">
     <!-- <link rel="stylesheet" href="../../css/bootstrap-select.less"> -->
     <link rel="stylesheet" href="../../scss/style.css">

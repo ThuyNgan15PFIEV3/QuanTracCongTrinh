@@ -29,13 +29,11 @@
                                         </div>
                                         <div class="card-body">
                                             <img src="https://znews-photo.zadn.vn/w660/Uploaded/xpcwvovb/2017_06_23/chot1498144503140.jpg" alt="Bản đồ" width="100%" height="237px">
-
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                                     <div class="card">
-
                                         <div class="card-header">
                                             <h4>Bản đồ</h4>
                                         </div>
@@ -49,169 +47,231 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="menu1" class=" tab-pane fade"><br>
-                            <!-- <div class='zoom'>
-                                <img src="../images/matCat.jpg" alt="Snow" id='ex2' onclick="point_it(event)" style="width:100%">
-                                <button class="dot" id="dot1"></button>
-                                <button class="dot" id="dot2"></button>
-                                <button class="dot" id="dot3"></button>
-                                <button class="dot" id="dot4"></button>
-                                <button class="dot" id="dot5"></button>
-                                <button class="dot" id="dot6"></button>
+                        <div id="menu1" class="tab-pane fade"><br>
 
-
-                            </div> -->
-                            <!-- <div class="container" class='zoom' id='ex2'>
-                                <img src="../images/matCat.jpg" alt="Snow" id="img" onclick="point_it(event)" style="width:100%">
-                                <button class="dot" id="dot1"></button>
-                                <button class="dot" id="dot2"></button>
-                                <button class="dot" id="dot3"></button>
-                                <button class="dot" id="dot4"></button>
-                                <button class="dot" id="dot5"></button>
-                                <button class="dot" id="dot6"></button>
-                            </div> -->
-                            <div class="container">
-                                <div id="slide">
-                                    <img src="../images/matCat.jpg" onclick="point_it(event)" style="width:100%">
-                                    <button class="dot" id="dot1"></button>
-                                    <button class="dot" id="dot2"></button>
-                                    <button class="dot" id="dot3"></button>
-                                    <button class="dot" id="dot4"></button>
-                                    <button class="dot" id="dot5"></button>
-                                    <button class="dot" id="dot6"></button>
-                                </div>
+                            <div class="contain">
+                                <img src="../images/matCat.jpg" usemap="#image-map" style="width:1200px;height: 500px">
+                                <map name="image-map">
+                                    <area target="" alt="" title="Tuyến quan trắc 1" href="" id="tuyen1" coords="243,129,10" shape="circle">
+                                </map>
                             </div>
 
-                            <div id="myModal1" class="modal">
-                                <!-- Modal content -->
-                                <div class="modal-content">
-                                    <span class="close" id="close1">&times;</span>
-                                    <p>Vui lòng lựa chọn cảm biến</p>
-                                    <select name="sensor" id="sensor">
-                                      <option value="Lun sau">Lún sâu</option>
-                                      <option value="Bien dang khe co dan">Biến dạng khe co giãn</option>
-                                      <option value="Ap luc ke rong">Áp lực kẽ rỗng</option>
-                                      <option value="Quan trac tham">Quan trắc thấm</option>
-                                      <option value="Ap luc mach dong">Áp lực mạch động</option>
-                                      <option value="Ung suat cot thep">Ứng suất cốt thép</option>
-                                  </select>
-                                    <button id="btnSensor">Chọn</button>
-                                </div>
-
-                            </div>
-                            <div id="myModal2" class="modal">
-                                <div class="container modal-image" id="modal-image">
-                                    <span class="close" id="close2">&times;</span>
-                                    <div id="slide">
-                                        <img src="../images/LunSau01.jpg" onclick="point_it_sensor(event)" style="width:100%" />
-                                    </div>
-                                    <!-- <button class="dot" id="dot1-1" onmouseover='$("#myModal3").show();' onmouseout='$("#myModal3").hide();'></button>
-                                        <div id="myModal3" class="modal">
-                                            <div class="modal-content">
-                                                <p>Hello</p>
+                            <div class="modal fade bd-example-modal-lg show" tabindex="-1" id="myModal1" role="dialog">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" id="close1" data-dismiss="modal">
+                                                    <span aria-hidden="true"> &times;</span>
+                                                    </button>
+                                        </div>
+                                        <div class="modal-body" id="dynamic-content">
+                                            <div class="form-group">
+                                                <label for="my-select">Lựa chọn cảm biến</label>
+                                                <div class="row">
+                                                    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                                                        <select class="custom-select" name="sensor" id="sensor">
+                                                            <option value="Lun sau">Lún sâu</option>
+                                                            <option value="Bien dang khe co dan">Biến dạng khe co giãn</option>
+                                                            <option value="Ap luc ke rong">Áp lực kẽ rỗng</option>
+                                                            <option value="Quan trac tham">Quan trắc thấm</option>
+                                                            <option value="Ap luc mach dong">Áp lực mạch động</option>
+                                                            <option value="Ung suat cot thep">Ứng suất cốt thép</option>    
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                                        <button id="btnSensor" class="btn btn-primary">Chọn</button>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div> -->
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
                         </div>
+                        <div class="modal fade bd-example-modal-lg show" tabindex="-1" id="myModal2" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content" style="width:800px;height:700px">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" id="close2" data-dismiss="modal">
+                                                <span aria-hidden="true"> &times;</span>
+                                                </button>
+                                    </div>
+                                    <div class="modal-body" id="dynamic-content" style="width:800px;height:500px">
+                                        <img src="../images/LunSau-01.jpg" usemap="#image-map-modal">
+                                        <map name="image-map-modal">
+                                                <area target="" alt="" title="D160438" href="" id="D160438" coords="265,410,5" shape="circle">
+                                        </map>
+
+                                    </div>
+                                </div>
+                                <!-- <div class="WTT">
+                                        đây nè
+                                    </div>
+                                    <div class="LTT">
+                                        đây nữa
+                                    </div>
+                                    <div class="MTT">
+                                        hihi
+                                    </div> -->
+                            </div>
+                        </div>
+                        <div class="modal fade bd-example-modal-lg show" tabindex="-1" id="myModal3" role="dialog">
+                            <div class="modal-dialog modal-dialog-centered modal-sm">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <label><b>Thông tin cảm biến</b></label>
+                                        <button type="button" class="close" id="close3" data-dismiss="modal">
+                                                            <span aria-hidden="true"> &times;</span>
+                                                            </button>
+                                    </div>
+                                    <div class="modal-body" id="SensorInfo">
+                                        <div>Tên cảm biến: D160438</div>
+                                        <div>Dữ liệu: 8.954</div>
+                                        <div>Thời gian: 2019-05-01 00:00:00.000</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
 
                     </div>
-                    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-zoom/1.7.21/jquery.zoom.js'></script>
-                    <script>
-                        function point_it(event) {
-                            pos_x = event.offsetX ? (event.offsetX) : event.pageX - document.getElementById("modal-image").offsetLeft;
-                            pos_y = event.offsetY ? (event.offsetY) : event.pageY - document.getElementById("modal-image").offsetTop;
-                            console.log(pos_x + "," + pos_y);
-                        }
 
-                        $(document).ready(function() {
-                            let sensor = $("#sensor").val();
-                            var scroll_zoom = new ScrollZoom($('.container'), 4, 0.5);
-                            $("#dot1").click(function() {
-                                $("#myModal1").css({
-                                    display: "block"
-                                });
+            </div>
+            <script type="text/javascript " src="https://cdnjs.cloudflare.com/ajax/libs/maphilight/1.4.0/jquery.maphilight.min.js "></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js "></script>
+            <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-zoom/1.7.21/jquery.zoom.js'></script>
+            <script>
+                $(document).ready(function() {
+                    let sensor = $("#sensor").val();
+                    $("#tuyen1").on('click', function(e) {
+                        e.preventDefault();
+                        console.log("successs");
+                        $("#myModal1").css({
+                            display: "block"
+                        });
+                    });
+                    var scroll_zoom = new ScrollZoom($('#menu1 .contain'), 4, 0.5);
+
+                    $("#close1").on('click', function() {
+                        $("#myModal1").css({
+                            display: "none"
+                        });
+                    });
+                    $("#close2").click(function() {
+                        $("#myModal2").css({
+                            display: "none "
+                        });
+                    });
+                    $("#close3").click(function() {
+                        $("#myModal3").css({
+                            display: "none "
+                        });
+                    });
+
+                    $("#btnSensor").on('click', function() {
+                        console.log("d");
+                        if (sensor == "Lun sau") {
+                            console.log(sensor);
+                            $("#myModal1").css({
+                                display: "none"
                             });
-                            $("#btnSensor").on('click', function() {
-                                if (sensor == "Lun sau") {
-                                    $("#myModal2").css({
-                                        display: "block"
-                                    });
-                                }
+                            $("#myModal2").css({
+                                display: "block"
                             });
-                            $("#close2").click(function() {
-                                $("#myModal2").css({
-                                    display: "none"
-                                });
+                        }
+                    });
+
+                    $("#close1 ").click(function() {
+                        $("#myModal1 ").css({
+                            display: "none "
+                        });
+                    });
+                });
+                (function() {
+                    $.get("http://localhost:3000/api/lunSau_tatCa", function(data) {
+                        console.log(data.data.recordset[49]);
+                        $("#D160438").on('click', function(e) {
+                            e.preventDefault();
+                            let id = this.id;
+                            let dt = data.data.recordset[49].Lunsau1;
+                            let ti = data.data.recordset[49].Timestamp.substring(0, 19);
+                            $("#SensorInfo").html(function() {
+                                let sensor = "<div><b>Tên cảm biến:</b> " + id + "</div>";
+                                let data = "<div><b>Dữ liệu:</b> " + dt + "</div>";
+                                let time = "<div><b>Thời gian:</b> " + ti + "</div>";
+                                return sensor + data + time;
                             });
-                            $("#close1").click(function() {
-                                $("#myModal1").css({
-                                    display: "none"
-                                });
+
+                            $("#myModal3").css({
+                                display: "block"
                             });
                         });
+                    });
+                })();
 
-                        function ScrollZoom(container, max_scale, factor) {
-                            var target = container.children().first()
-                            var size = {
-                                w: target.width(),
-                                h: target.height()
-                            }
-                            var pos = {
-                                x: 0,
-                                y: 0
-                            }
-                            var zoom_target = {
-                                x: 0,
-                                y: 0
-                            }
-                            var zoom_point = {
-                                x: 0,
-                                y: 0
-                            }
-                            var scale = 1
-                            target.css('transform-origin', '0 0')
-                            target.on("mousewheel DOMMouseScroll", scrolled)
+                function ScrollZoom(container, max_scale, factor) {
+                    console.log(container);
+                    var target = container.children().first()
+                    var size = {
+                        w: target.width(),
+                        h: target.height()
+                    }
+                    var pos = {
+                        x: 0,
+                        y: 0
+                    }
+                    var zoom_target = {
+                        x: 0,
+                        y: 0
+                    }
+                    var zoom_point = {
+                        x: 0,
+                        y: 0
+                    }
+                    var scale = 1
+                    target.css('transform-origin', '0 0')
+                    target.on("mousewheel DOMMouseScroll ", scrolled)
 
-                            function scrolled(e) {
-                                var offset = container.offset()
-                                zoom_point.x = e.pageX - offset.left
-                                zoom_point.y = e.pageY - offset.top
+                    function scrolled(e) {
+                        var offset = container.offset()
+                        zoom_point.x = e.pageX - offset.left
+                        zoom_point.y = e.pageY - offset.top
 
-                                e.preventDefault();
-                                var delta = e.delta || e.originalEvent.wheelDelta;
-                                if (delta === undefined) {
-                                    delta = e.originalEvent.detail;
-                                }
-                                delta = Math.max(-1, Math.min(1, delta))
-                                zoom_target.x = (zoom_point.x - pos.x) / scale
-                                zoom_target.y = (zoom_point.y - pos.y) / scale
-                                scale += delta * factor * scale
-                                scale = Math.max(1, Math.min(max_scale, scale))
-
-                                pos.x = -zoom_target.x * scale + zoom_point.x
-                                pos.y = -zoom_target.y * scale + zoom_point.y
-
-
-                                if (pos.x > 0)
-                                    pos.x = 0
-                                if (pos.x + size.w * scale < size.w)
-                                    pos.x = -size.w * (scale - 1)
-                                if (pos.y > 0)
-                                    pos.y = 0
-                                if (pos.y + size.h * scale < size.h)
-                                    pos.y = -size.h * (scale - 1)
-
-                                update()
-                            }
-
-                            function update() {
-                                target.css('transform', 'translate(' + (pos.x) + 'px,' + (pos.y) + 'px) scale(' + scale + ',' + scale + ')')
-                            }
+                        e.preventDefault();
+                        var delta = e.delta || e.originalEvent.wheelDelta;
+                        if (delta === undefined) {
+                            delta = e.originalEvent.detail;
                         }
-                    </script>
-                    <script src="https://maps.googleapis.com/maps/api/js?v=3&sensor=false"></script>
-                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2jlT6C_to6X1mMvR9yRWeRvpIgTXgddM"></script>
+                        delta = Math.max(-1, Math.min(1, delta))
+                        zoom_target.x = (zoom_point.x - pos.x) / scale
+                        zoom_target.y = (zoom_point.y - pos.y) / scale
+                        scale += delta * factor * scale
+                        scale = Math.max(1, Math.min(max_scale, scale))
 
-                    <%- include('./layouts/end.ejs') %>
+                        pos.x = -zoom_target.x * scale + zoom_point.x
+                        pos.y = -zoom_target.y * scale + zoom_point.y
+
+
+                        if (pos.x > 0)
+                            pos.x = 0
+                        if (pos.x + size.w * scale < size.w)
+                            pos.x = -size.w * (scale - 1)
+                        if (pos.y > 0)
+                            pos.y = 0
+                        if (pos.y + size.h * scale < size.h)
+                            pos.y = -size.h * (scale - 1)
+
+                        update()
+                    }
+
+                    function update() {
+                        target.css('transform', 'translate(' + (pos.x) + 'px,' + (pos.y) + 'px) scale(' + scale + ',' + scale + ')')
+                    }
+                }
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?v=3&sensor=false "></script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2jlT6C_to6X1mMvR9yRWeRvpIgTXgddM "></script>
+
+            <%- include('./layouts/end.ejs') %>
