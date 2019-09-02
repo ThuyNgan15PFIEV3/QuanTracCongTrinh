@@ -52,12 +52,18 @@
                             <div class="contain">
                                 <img src="../images/matCat.jpg" usemap="#image-map" style="width:1200px;height: 500px">
                                 <map name="image-map">
-                                    <area target="" alt="" title="Tuyến quan trắc 1" href="" id="tuyen1" coords="243,129,10" shape="circle">
+                                    <area target="" alt="" title="Tuyến quan trắc 1" href="" id="tuyen1" coords="244,133,5" shape="circle">
+                                    <area target="" alt="" title="Tuyến quan trắc 2" href="" id="tuyen2" coords="465,132,5" shape="circle">
+                                    <area target="" alt="" title="Tuyến quan trắc 5" href="" id="tuyen5" coords="686,132,5" shape="circle">
+                                    <area target="" alt="" title="Tuyến quan trắc 3" href="" id="tuyen3" coords="732,133,5" shape="circle">
+                                    <area target="" alt="" title="Tuyến quan trắc 6" href="" id="tuyen6" coords="777,132,5" shape="circle">
+                                    <area target="" alt="" title="Tuyến quan trắc 4" href="" id="tuyen4" coords="855,132,5" shape="circle">
+
                                 </map>
                             </div>
 
                             <div class="modal fade bd-example-modal-lg show" tabindex="-1" id="myModal1" role="dialog">
-                                <div class="modal-dialog">
+                                <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" id="close1" data-dismiss="modal">
@@ -69,10 +75,10 @@
                                                 <label for="my-select">Lựa chọn cảm biến</label>
                                                 <div class="row">
                                                     <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-                                                        <select class="custom-select" name="sensor" id="sensor">
+                                                        <select class="form-control" name="sensor" id="sensor">
                                                             <option value="Lun sau">Lún sâu</option>
-                                                            <option value="Bien dang khe co dan">Biến dạng khe co giãn</option>
-                                                            <option value="Ap luc ke rong">Áp lực kẽ rỗng</option>
+                                                            <option value="Bien dang khe co gian">Biến dạng khe co giãn</option>
+                                                            <option value="Ap luc ke rong">Áp lực kẻ rỗng</option>
                                                             <option value="Quan trac tham">Quan trắc thấm</option>
                                                             <option value="Ap luc mach dong">Áp lực mạch động</option>
                                                             <option value="Ung suat cot thep">Ứng suất cốt thép</option>    
@@ -94,66 +100,308 @@
                                 <div class="modal-content" style="width:800px;height:700px">
                                     <div class="modal-header">
                                         <button type="button" class="close" id="close2" data-dismiss="modal">
+                                            <span aria-hidden="true"> &times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body" id="dynamic-content" style="width:800px;height:500px">
+                                        <img src="../images/BoTriChung/LunSau/LunSau-01.jpg" usemap="#image-map-lunSau1">
+                                        <map name="image-map-lunSau1">
+                                            <area target="" alt="" title="D160438" href="" id="D160438" coords="251,379,5" shape="circle">
+                                            <area target="" alt="" title="D160439" href="" id="D160439" coords="287,357,5" shape="circle">
+                                            <area target="" alt="" title="D160446" href="" id="D160446" coords="358,380,5" shape="circle">
+                                            <area target="" alt="" title="D160447" href="" id="D160447" coords="464,380,5" shape="circle">
+                                            <area target="" alt="" title="D160450" href="" id="D160450" coords="428,356,5" shape="circle">
+                                            <area target="" alt="" title="D160451" href="" id="D160451" coords="358,356,5" shape="circle">
+
+                                        </map>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade bd-example-modal-lg show" tabindex="-1" id="ALKR-1" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content" style="width:800px;height:500px">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" id="closeALKR1" data-dismiss="modal">
                                                 <span aria-hidden="true"> &times;</span>
+                                            </button>
+                                    </div>
+                                    <div class="modal-body" id="dynamic-content" style="width:800px;height:500px">
+                                        <img src="../images/ALKR-1.jpg" usemap="#image-map-ALKR1">
+                                        <map name="image-map-ALKR1">
+                                            <area target="" alt="" title="P160743" href="" id="P160743" coords="330,305,5" shape="circle">
+                                            <area target="" alt="" title="P160745" href="" id="P160745" coords="341,282,5" shape="circle">
+                                            <area target="" alt="" title="P160746" href="" id="P160746" coords="354,282,5" shape="circle">
+                                            <area target="" alt="" title="P160744" href="" id="P160744" coords="354,305,5" shape="circle">
+                                        </map>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade bd-example-modal-lg show" tabindex="-1" id="Tham-1" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content" style="width:800px;height:500px">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" id="closeTham1" data-dismiss="modal">
+                                                    <span aria-hidden="true"> &times;</span>
                                                 </button>
                                     </div>
                                     <div class="modal-body" id="dynamic-content" style="width:800px;height:500px">
-                                        <img src="../images/LunSau-01.jpg" usemap="#image-map-modal">
-                                        <map name="image-map-modal">
-                                                <area target="" alt="" title="D160438" href="" id="D160438" coords="265,410,5" shape="circle">
-                                        </map>
-
-                                    </div>
-                                </div>
-                                <!-- <div class="WTT">
-                                        đây nè
-                                    </div>
-                                    <div class="LTT">
-                                        đây nữa
-                                    </div>
-                                    <div class="MTT">
-                                        hihi
-                                    </div> -->
-                            </div>
-                        </div>
-                        <div class="modal fade bd-example-modal-lg show" tabindex="-1" id="myModal3" role="dialog">
-                            <div class="modal-dialog modal-dialog-centered modal-sm">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <label><b>Thông tin cảm biến</b></label>
-                                        <button type="button" class="close" id="close3" data-dismiss="modal">
-                                                            <span aria-hidden="true"> &times;</span>
-                                                            </button>
-                                    </div>
-                                    <div class="modal-body" id="SensorInfo">
-                                        <div>Tên cảm biến: D160438</div>
-                                        <div>Dữ liệu: 8.954</div>
-                                        <div>Thời gian: 2019-05-01 00:00:00.000</div>
+                                        <img src="../images/BoTriChung/QuanTracTham/Tham-1.jpg" usemap="#image-map-Tham1">
+                                        <map name="image-map-Tham1">
+                                                <area target="" alt="" title="P160209" href="" id="P160209" coords="346,247,5" shape="circle">
+                                                <area target="" alt="" title="P160212" href="" id="P160212" coords="345,188,5" shape="circle">
+                                                <area target="" alt="" title="P160215" href="" id="P160215" coords="367,213,5" shape="circle">
+                                                <area target="" alt="" title="P160230" href="" id="P160230" coords="375,272,5" shape="circle">
+                                                <area target="" alt="" title="P160236" href="" id="P160236" coords="432,256,5" shape="circle">
+                                                <area target="" alt="" title="P160241" href="" id="P160241" coords="433,232,5" shape="circle">
+                                                
+                                            </map>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-
-
                     </div>
-
+                    <div class="modal fade bd-example-modal-lg show" tabindex="-1" id="notification" role="dialog">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" id="closeNoti" data-dismiss="modal">
+                                            <span aria-hidden="true"> &times;</span>
+                                        </button>
+                                </div>
+                                <div class="modal-body">
+                                    <label>Không có dữ liệu</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade bd-example-modal-lg show" tabindex="-1" id="myModal3" role="dialog">
+                        <div class="modal-dialog modal-dialog-centered modal-sm">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <label><b>Thông tin cảm biến</b></label>
+                                    <button type="button" class="close" id="close3" data-dismiss="modal">
+                                            <span aria-hidden="true"> &times;</span>
+                                        </button>
+                                </div>
+                                <div class="modal-body" id="SensorInfo">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade bd-example-modal-lg show" tabindex="-1" id="modalD160438" role="dialog">
+                        <div class="modal-dialog modal-dialog-centered modal-sm">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <label><b>Thông tin cảm biến</b></label>
+                                    <button type="button" class="close" id="closeD160438" data-dismiss="modal">
+                                                    <span aria-hidden="true"> &times;</span>
+                                                </button>
+                                </div>
+                                <div class="modal-body" id="infoD160438">
+                                    <div><b>Tên cảm biến:</b> </div>
+                                    <div><b>Dữ liệu:</b></div>
+                                    <div><b>Thời gian:</b></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade bd-example-modal-lg show" tabindex="-1" id="modalD160439" role="dialog">
+                        <div class="modal-dialog modal-dialog-centered modal-sm">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <label><b>Thông tin cảm biến</b></label>
+                                    <button type="button" class="close" id="closeD160439" data-dismiss="modal">
+                                                    <span aria-hidden="true"> &times;</span>
+                                                </button>
+                                </div>
+                                <div class="modal-body" id="infoD160439">
+                                    <div><b>Tên cảm biến:</b> </div>
+                                    <div><b>Dữ liệu:</b></div>
+                                    <div><b>Thời gian:</b></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade bd-example-modal-lg show" tabindex="-1" id="modalD160446" role="dialog">
+                        <div class="modal-dialog modal-dialog-centered modal-sm">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <label><b>Thông tin cảm biến</b></label>
+                                    <button type="button" class="close" id="closeD160446" data-dismiss="modal">
+                                                    <span aria-hidden="true"> &times;</span>
+                                                </button>
+                                </div>
+                                <div class="modal-body" id="infoD160446">
+                                    <div><b>Tên cảm biến:</b> </div>
+                                    <div><b>Dữ liệu:</b></div>
+                                    <div><b>Thời gian:</b></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade bd-example-modal-lg show" tabindex="-1" id="modalD160447" role="dialog">
+                        <div class="modal-dialog modal-dialog-centered modal-sm">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <label><b>Thông tin cảm biến</b></label>
+                                    <button type="button" class="close" id="closeD160447" data-dismiss="modal">
+                                                    <span aria-hidden="true"> &times;</span>
+                                                </button>
+                                </div>
+                                <div class="modal-body" id="infoD160447">
+                                    <div><b>Tên cảm biến:</b> </div>
+                                    <div><b>Dữ liệu:</b></div>
+                                    <div><b>Thời gian:</b></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade bd-example-modal-lg show" tabindex="-1" id="modalD160450" role="dialog">
+                        <div class="modal-dialog modal-dialog-centered modal-sm">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <label><b>Thông tin cảm biến</b></label>
+                                    <button type="button" class="close" id="closeD160450" data-dismiss="modal">
+                                                    <span aria-hidden="true"> &times;</span>
+                                                </button>
+                                </div>
+                                <div class="modal-body" id="infoD160450">
+                                    <div><b>Tên cảm biến:</b> </div>
+                                    <div><b>Dữ liệu:</b></div>
+                                    <div><b>Thời gian:</b></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade bd-example-modal-lg show" tabindex="-1" id="modalD160451" role="dialog">
+                        <div class="modal-dialog modal-dialog-centered modal-sm">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <label><b>Thông tin cảm biến</b></label>
+                                    <button type="button" class="close" id="closeD160451" data-dismiss="modal">
+                                                    <span aria-hidden="true"> &times;</span>
+                                                </button>
+                                </div>
+                                <div class="modal-body" id="infoD160451">
+                                    <div><b>Tên cảm biến:</b> </div>
+                                    <div><b>Dữ liệu:</b></div>
+                                    <div><b>Thời gian:</b></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade bd-example-modal-lg show" tabindex="-1" id="modalP160743" role="dialog">
+                        <div class="modal-dialog modal-dialog-centered modal-sm">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <label><b>Thông tin cảm biến</b></label>
+                                    <button type="button" class="close" id="closeP160743" data-dismiss="modal">
+                                            <span aria-hidden="true"> &times;</span>
+                                        </button>
+                                </div>
+                                <div class="modal-body" id="infoP160743">
+                                    <div><b>Tên cảm biến:</b> </div>
+                                    <div><b>Dữ liệu:</b></div>
+                                    <div><b>Thời gian:</b></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade bd-example-modal-lg show" tabindex="-1" id="modalP160744" role="dialog">
+                        <div class="modal-dialog modal-dialog-centered modal-sm">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <label><b>Thông tin cảm biến</b></label>
+                                    <button type="button" class="close" id="closeP160744" data-dismiss="modal">
+                                                <span aria-hidden="true"> &times;</span>
+                                            </button>
+                                </div>
+                                <div class="modal-body" id="infoP160744">
+                                    <div><b>Tên cảm biến:</b> </div>
+                                    <div><b>Dữ liệu:</b></div>
+                                    <div><b>Thời gian:</b></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade bd-example-modal-lg show" tabindex="-1" id="modalP160745" role="dialog">
+                        <div class="modal-dialog modal-dialog-centered modal-sm">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <label><b>Thông tin cảm biến</b></label>
+                                    <button type="button" class="close" id="closeP160745" data-dismiss="modal">
+                                                    <span aria-hidden="true"> &times;</span>
+                                                </button>
+                                </div>
+                                <div class="modal-body" id="infoP160745">
+                                    <div><b>Tên cảm biến:</b> </div>
+                                    <div><b>Dữ liệu:</b></div>
+                                    <div><b>Thời gian:</b></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade bd-example-modal-lg show" tabindex="-1" id="modalP160746" role="dialog">
+                        <div class="modal-dialog modal-dialog-centered modal-sm">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <label><b>Thông tin cảm biến</b></label>
+                                    <button type="button" class="close" id="closeP160746" data-dismiss="modal">
+                                                        <span aria-hidden="true"> &times;</span>
+                                                    </button>
+                                </div>
+                                <div class="modal-body" id="infoP160746">
+                                    <div><b>Tên cảm biến:</b> </div>
+                                    <div><b>Dữ liệu:</b></div>
+                                    <div><b>Thời gian:</b></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
             </div>
-            <script type="text/javascript " src="https://cdnjs.cloudflare.com/ajax/libs/maphilight/1.4.0/jquery.maphilight.min.js "></script>
+            </div>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js "></script>
-            <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-zoom/1.7.21/jquery.zoom.js'></script>
             <script>
                 $(document).ready(function() {
-                    let sensor = $("#sensor").val();
                     $("#tuyen1").on('click', function(e) {
                         e.preventDefault();
-                        console.log("successs");
+                        $("#myModal1").css({
+                            display: "block"
+                        });
+                    });
+                    $("#tuyen2").on('click', function(e) {
+                        e.preventDefault();
+                        $("#myModal1").css({
+                            display: "block"
+                        });
+                    });
+                    $("#tuyen3").on('click', function(e) {
+                        e.preventDefault();
+                        $("#myModal1").css({
+                            display: "block"
+                        });
+                    });
+                    $("#tuyen4").on('click', function(e) {
+                        e.preventDefault();
+                        $("#myModal1").css({
+                            display: "block"
+                        });
+                    });
+                    $("#tuyen5").on('click', function(e) {
+                        e.preventDefault();
+                        $("#myModal1").css({
+                            display: "block"
+                        });
+                    });
+                    $("#tuyen6").on('click', function(e) {
+                        e.preventDefault();
                         $("#myModal1").css({
                             display: "block"
                         });
                     });
                     var scroll_zoom = new ScrollZoom($('#menu1 .contain'), 4, 0.5);
-
                     $("#close1").on('click', function() {
                         $("#myModal1").css({
                             display: "none"
@@ -161,31 +409,164 @@
                     });
                     $("#close2").click(function() {
                         $("#myModal2").css({
-                            display: "none "
+                            display: "none"
                         });
                     });
                     $("#close3").click(function() {
                         $("#myModal3").css({
-                            display: "none "
+                            display: "none"
                         });
                     });
-
-                    $("#btnSensor").on('click', function() {
-                        console.log("d");
+                    $("#closeNoti").click(function() {
+                        $("#notification").css({
+                            display: "none"
+                        });
+                    });
+                    $("#closeALKR1").click(function() {
+                        $("#ALKR-1").css({
+                            display: "none"
+                        });
+                    });
+                    $("#tuyen1 #btnSensor").on('click', function() {
+                        var sensor = $('#sensor').val();
+                        $("#myModal1").css({
+                            display: "none"
+                        });
                         if (sensor == "Lun sau") {
-                            console.log(sensor);
-                            $("#myModal1").css({
-                                display: "none"
-                            });
                             $("#myModal2").css({
                                 display: "block"
                             });
+                        } else if (sensor == "Bien dang khe co gian") {
+                            $("#notification").css({
+                                display: "block"
+                            });
+                        } else if (sensor == "Ap luc ke rong") {
+                            $("#ALKR-1").css({
+                                display: "block"
+                            });
+                        } else if (sensor == "Quan trac tham") {
+                            $("#Tham-1").css({
+                                display: "block"
+                            });
+                        } else if (sensor == "Ap luc mach dong") {
+                            $("#notification").css({
+                                display: "block"
+                            });
+                        } else if (sensor == "Ung suat cot thep") {
+                            $("#notification").css({
+                                display: "block"
+                            });
                         }
-                    });
 
-                    $("#close1 ").click(function() {
-                        $("#myModal1 ").css({
-                            display: "none "
+                    });
+                    $("#D160438").on('click', function(e) {
+                        e.preventDefault();
+                        $("#modalD160438").css({
+                            display: "block"
+                        });
+                    });
+                    $("#D160439").on('click', function(e) {
+                        e.preventDefault();
+                        $("#modalD160439").css({
+                            display: "block"
+                        });
+                    });
+                    $("#D160446").on('click', function(e) {
+                        e.preventDefault();
+                        $("#modalD160446").css({
+                            display: "block"
+                        });
+                    });
+                    $("#D160447").on('click', function(e) {
+                        e.preventDefault();
+                        $("#modalD160447").css({
+                            display: "block"
+                        });
+                    });
+                    $("#D160450").on('click', function(e) {
+                        e.preventDefault();
+                        $("#modalD160450").css({
+                            display: "block"
+                        });
+                    });
+                    $("#D160451").on('click', function(e) {
+                        e.preventDefault();
+                        $("#modalD160451").css({
+                            display: "block"
+                        });
+                    });
+                    $("#P160743").on('click', function(e) {
+                        e.preventDefault();
+                        $("#modalP160743").css({
+                            display: "block"
+                        });
+                    });
+                    $("#P160744").on('click', function(e) {
+                        e.preventDefault();
+                        $("#modalP160744").css({
+                            display: "block"
+                        });
+                    });
+                    $("#P160745").on('click', function(e) {
+                        e.preventDefault();
+                        $("#modalP160745").css({
+                            display: "block"
+                        });
+                    });
+                    $("#P160746").on('click', function(e) {
+                        e.preventDefault();
+                        $("#modalP160746").css({
+                            display: "block"
+                        });
+                    });
+                    $("#closeD160438").click(function() {
+                        $("#modalD160438").css({
+                            display: "none"
+                        });
+                    });
+                    $("#closeD160439").click(function() {
+                        $("#modalD160439").css({
+                            display: "none"
+                        });
+                    });
+                    $("#closeD160446").click(function() {
+                        $("#modalD160446").css({
+                            display: "none"
+                        });
+                    });
+                    $("#closeD160447").click(function() {
+                        $("#modalD160447").css({
+                            display: "none"
+                        });
+                    });
+                    $("#closeD160450").click(function() {
+                        $("#modalD160450").css({
+                            display: "none"
+                        });
+                    });
+                    $("#closeD160451").click(function() {
+                        $("#modalD160451").css({
+                            display: "none"
+                        });
+                    });
+                    $("#closeP160743").click(function() {
+                        $("#modalP160743").css({
+                            display: "none"
+                        });
+                    });
+                    $("#closeP160744").click(function() {
+                        $("#modalP160744").css({
+                            display: "none"
+                        });
+                    });
+                    $("#closeP160745").click(function() {
+                        $("#modalP160745").css({
+                            display: "none"
+                        });
+                    });
+                    $("#closeP160746").click(function() {
+                        $("#modalP160746").css({
+                            display: "none"
                         });
                     });
                 });
@@ -203,16 +584,34 @@
                                 let time = "<div><b>Thời gian:</b> " + ti + "</div>";
                                 return sensor + data + time;
                             });
-
                             $("#myModal3").css({
                                 display: "block"
                             });
                         });
+
+                    });
+                    $.get("http://localhost:3000/api/lunSau_tatCa", function(data) {
+                        console.log(data.data.recordset[49]);
+                        $("#P160743").on('click', function(e) {
+                            e.preventDefault();
+                            let id = this.id;
+                            let dt = data.data.recordset[49].Lunsau1;
+                            let ti = data.data.recordset[49].Timestamp.substring(0, 19);
+                            $("#SensorInfo").html(function() {
+                                let sensor = "<div><b>Tên cảm biến:</b> " + id + "</div>";
+                                let data = "<div><b>Dữ liệu:</b> " + dt + "</div>";
+                                let time = "<div><b>Thời gian:</b> " + ti + "</div>";
+                                return sensor + data + time;
+                            });
+                            $("#modalP160743").css({
+                                display: "block"
+                            });
+                        });
+
                     });
                 })();
 
                 function ScrollZoom(container, max_scale, factor) {
-                    console.log(container);
                     var target = container.children().first()
                     var size = {
                         w: target.width(),
@@ -271,7 +670,4 @@
                     }
                 }
             </script>
-            <script src="https://maps.googleapis.com/maps/api/js?v=3&sensor=false "></script>
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2jlT6C_to6X1mMvR9yRWeRvpIgTXgddM "></script>
-
             <%- include('./layouts/end.ejs') %>

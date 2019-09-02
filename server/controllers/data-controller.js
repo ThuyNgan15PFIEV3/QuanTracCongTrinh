@@ -167,7 +167,7 @@ export default class DataController {
             res.sendStatus(500);
         };
     };
-    getDataOption_LunSau_Tuyen = async(req, res, next) => {
+    getDataOption_LunSau_Tuyen_ThoiGian = async(req, res, next) => {
         try {
             let pool = await sql.connect(conn);
             let type = "Lun sau";
@@ -314,7 +314,7 @@ export default class DataController {
             res.sendStatus(500);
         };
     };
-    getDataOption_BienDangKheCoGian_Tuyen = async(req, res, next) => {
+    getDataOption_BienDangKheCoGian_Tuyen_ThoiGian = async(req, res, next) => {
         try {
             let pool = await sql.connect(conn);
             let type = "Bien dang khe co gian";
@@ -461,7 +461,7 @@ export default class DataController {
             res.sendStatus(500);
         };
     };
-    getDataOption_ApLucKeRong_Tuyen = async(req, res, next) => {
+    getDataOption_ApLucKeRong_Tuyen_ThoiGian = async(req, res, next) => {
         try {
             let pool = await sql.connect(conn);
             let type = "Ap luc ke rong";
@@ -608,7 +608,7 @@ export default class DataController {
             res.sendStatus(500);
         };
     };
-    getDataOption_QuanTracTham_Tuyen = async(req, res, next) => {
+    getDataOption_QuanTracTham_Tuyen_ThoiGian = async(req, res, next) => {
         try {
             let pool = await sql.connect(conn);
             let type = "Quan trac tham";
@@ -755,7 +755,7 @@ export default class DataController {
             res.sendStatus(500);
         };
     };
-    getDataOption_ApLucMachDong_Tuyen = async(req, res, next) => {
+    getDataOption_ApLucMachDong_Tuyen_ThoiGian = async(req, res, next) => {
         try {
             let pool = await sql.connect(conn);
             let type = "Ap luc mach dong";
@@ -903,7 +903,48 @@ export default class DataController {
         };
     };
 
-    getDataOption_UngSuatCotThep_Tuyen = async(req, res, next) => {
+    getSensor = async(req, res, next) => {
+        try {
+            let pool = await sql.connect(conn);
+            let serial_Number = req.body.serialNumber;
+            let sqlQuery1 = "SELECT Sign FROM [GENERAL] WHERE Serial_Number = '" + serial_Number + "';";
+            let result1 = await pool.request().query(sqlQuery1);
+            console.log(result1.recordset[0].Sign);
+            let sqlQuery2 = "SELECT * TOP 1 FROM [GENERAL] WHERE '" + result1.recordset[0].Sign + "' ORDER BY Timestamp DESC;";
+
+            let result2 = await pool.request().query(sqlQuery2);
+            console.log(result2);
+            // let sensor = [];
+            // for (let i = 0; i < result1.recordset.length; i++) {
+            //     sensor.push(result1.recordset[i].Sign);
+            // }
+            // let str = sensor[0];
+            // for (let i = 1; i < sensor.length; i++) {
+            //     str = str + "," + sensor[i];
+            // }
+            // let request = await pool.request();
+            // console.log(section);
+            // request.query(sqlQuery, function(err, result) {
+            //     if (err) {
+            //         sql.close();
+            //         console.log("Error while querying database :- " + err);
+            //         res.send(err);
+            //     } else {
+            //         sql.close();
+            //         console.log(result);
+            //         return res.status(200).json({
+            //             success: true,
+            //             data: result
+            //         });
+            //     }
+            // });
+        } catch (e) {
+            sql.close();
+            console.log(e.message);
+            res.sendStatus(500);
+        };
+    };
+    getDataOption_UngSuatCotThep_Tuyen_ThoiGian = async(req, res, next) => {
         try {
             let pool = await sql.connect(conn);
             let type = "Ung suat cot thep";
@@ -950,6 +991,7 @@ export default class DataController {
             res.sendStatus(500);
         };
     };
+
     selectType_LunSau = async(req, res, next) => {
         try {
             let pool = await sql.connect(conn);

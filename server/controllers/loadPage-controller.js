@@ -31,12 +31,6 @@ export default class LoadPageController {
             path: '/LichSuBangBieu/QuanTracTham'
         });
     };
-    boTriChung = async(req, res, next) => {
-        res.render('BoTriChung', {
-            pageTitle: 'Bố trí chung',
-            path: 'TongQuan/BoTriChung'
-        });
-    };
     lichSuBangBieu_ApLucMachDong = async(req, res, next) => {
         res.render('LichSuBangBieu_ApLucMachDong', {
             pageTitle: 'Áp lực mạch động',

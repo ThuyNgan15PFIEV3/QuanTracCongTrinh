@@ -18,7 +18,6 @@ module.exports = (app) => {
     app.route('/api/ungSuatCotThep_tatCa')
         .get(dataController.getData_UngSuatCotThep_TatCa);
 
-
     app.route('/api/lunSau')
         .post(dataController.getData_LunSau);
     app.route('/api/bienDangKheCoGian')
@@ -45,19 +44,31 @@ module.exports = (app) => {
     app.route('/api/option_ungSuatCotThep')
         .post(dataController.getDataOption_UngSuatCotThep);
 
-    app.route('/api/option_lunSau_tuyen')
-        .post(dataController.getDataOption_LunSau_Tuyen);
-    app.route('/api/option_bienDangKheCoGian_tuyen')
-        .post(dataController.getDataOption_BienDangKheCoGian_Tuyen);
-    app.route('/api/option_apLucKeRong_tuyen')
-        .post(dataController.getDataOption_ApLucKeRong_Tuyen);
-    app.route('/api/option_quanTracTham_tuyen')
-        .post(dataController.getDataOption_QuanTracTham_Tuyen);
-    app.route('/api/option_apLucMachDong_tuyen')
-        .post(dataController.getDataOption_ApLucMachDong_Tuyen);
-    app.route('/api/option_ungSuatCotThep_tuyen')
-        .post(dataController.getDataOption_UngSuatCotThep_Tuyen);
+    // app.route('/api/option_lunSau_tuyen')
+    //     .post(dataController.getDataOption_LunSau_Tuyen);
+    // app.route('/api/option_bienDangKheCoGian_tuyen')
+    //     .post(dataController.getDataOption_BienDangKheCoGian_Tuyen);
+    // app.route('/api/option_apLucKeRong_tuyen')
+    //     .post(dataController.getDataOption_ApLucKeRong_Tuyen);
+    // app.route('/api/option_quanTracTham_tuyen')
+    //     .post(dataController.getDataOption_QuanTracTham_Tuyen);
+    // app.route('/api/option_apLucMachDong_tuyen')
+    //     .post(dataController.getDataOption_ApLucMachDong_Tuyen);
+    // app.route('/api/option_ungSuatCotThep_tuyen')
+    //     .post(dataController.getDataOption_UngSuatCotThep_Tuyen);
 
+    app.route('/api/option_lunSau_tuyen_thoiGian')
+        .post(dataController.getDataOption_LunSau_Tuyen_ThoiGian);
+    app.route('/api/option_bienDangKheCoGian_tuyen_thoiGian')
+        .post(dataController.getDataOption_BienDangKheCoGian_Tuyen_ThoiGian);
+    app.route('/api/option_apLucKeRong_tuyen_thoiGian')
+        .post(dataController.getDataOption_ApLucKeRong_Tuyen_ThoiGian);
+    app.route('/api/option_quanTracTham_tuyen_thoiGian')
+        .post(dataController.getDataOption_QuanTracTham_Tuyen_ThoiGian);
+    app.route('/api/option_apLucMachDong_tuyen_thoiGian')
+        .post(dataController.getDataOption_ApLucMachDong_Tuyen_ThoiGian);
+    app.route('/api/option_ungSuatCotThep_tuyen_thoiGian')
+        .post(dataController.getDataOption_UngSuatCotThep_Tuyen_ThoiGian);
     app.route('/api/selectType_lunSau')
         .get(dataController.selectType_LunSau);
     app.route('/api/selectType_bienDangKheCoGian')
@@ -70,6 +81,9 @@ module.exports = (app) => {
         .get(dataController.selectType_UngSuatCotThep);
     app.route('/api/selectType_apLucMachDong')
         .get(dataController.selectType_ApLucMachDong);
+
+    app.route('/api/getSensor')
+        .post(dataController.getSensor);
 
     app.route('/')
         .get(loadPageController.homepage);
@@ -85,9 +99,6 @@ module.exports = (app) => {
         .get(loadPageController.lichSuBangBieu_ApLucMachDong);
     app.route('/LichSuBangBieu/UngSuatCotThep')
         .get(loadPageController.lichSuBangBieu_UngSuatCotThep);
-    app.route('/TongQuan/BoTriChung')
-        .get(loadPageController.boTriChung);
-
 
     app.route('/BangBieu')
         .get(dataController.BangBieu);
