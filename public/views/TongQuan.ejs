@@ -50,7 +50,7 @@
                         <div id="menu1" class="tab-pane fade"><br>
 
                             <div class="contain">
-                                <img src="../images/matCat.jpg" usemap="#image-map" style="width:1200px;height: 500px">
+                                <img src="../images/BoTriChung/matCat.jpg" usemap="#image-map" style="width:1200px;height: 500px">
                                 <map name="image-map">
                                     <area target="" alt="" title="Tuyến quan trắc 1" href="" id="tuyen1" coords="244,133,5" shape="circle">
                                     <area target="" alt="" title="Tuyến quan trắc 2" href="" id="tuyen2" coords="465,132,5" shape="circle">
@@ -427,7 +427,7 @@
                             display: "none"
                         });
                     });
-                    $("#tuyen1 #btnSensor").on('click', function() {
+                    $("#btnSensor").on('click', function() {
                         var sensor = $('#sensor').val();
                         $("#myModal1").css({
                             display: "none"
@@ -458,12 +458,6 @@
                             });
                         }
 
-                    });
-                    $("#D160438").on('click', function(e) {
-                        e.preventDefault();
-                        $("#modalD160438").css({
-                            display: "block"
-                        });
                     });
                     $("#D160439").on('click', function(e) {
                         e.preventDefault();
