@@ -910,7 +910,7 @@ export default class DataController {
             let sqlQuery1 = "SELECT Sign FROM [GENERAL] WHERE Serial_Number = '" + serial_Number + "';";
             let result1 = await pool.request().query(sqlQuery1);
             console.log(result1.recordset[0].Sign);
-            let sqlQuery2 = "SELECT * TOP 1 FROM [GENERAL] WHERE '" + result1.recordset[0].Sign + "' ORDER BY Timestamp DESC;";
+            let sqlQuery2 = "SELECT *  FROM [GENERAL] WHERE '" + result1.recordset[0].Sign + "' ORDER BY Timestamp DESC;";
 
             let result2 = await pool.request().query(sqlQuery2);
             console.log(result2);

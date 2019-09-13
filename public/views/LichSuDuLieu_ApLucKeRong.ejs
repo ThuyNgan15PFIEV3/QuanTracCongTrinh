@@ -6,7 +6,12 @@
             <!-- right panel -->
             <div id="right-panel" class="right-panel">
                 <%- include('./layouts/navbar.ejs') %>
-                    <div class="row">
+                    <header class="header">
+                        <div class="header-menu" style="text-align: center">
+                            <span style="font-size: 20px"><b>CẢM BIẾN ÁP LỰC KẺ RỖNG</b></span>
+                        </div>
+                    </header>
+                    <div class="row" style="padding-top: 10px">
                         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                             <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
                                 <label style="margin-left: 20px;"><b>MẶT CẮT</b></label>
@@ -141,7 +146,7 @@
             }
             var newData = [];
             for (var i = 0; i < data.length; i++) {
-                result.labels.push(data[i].Timestamp);
+                result.labels.push(data[i].Timestamp.slice(0, 16));
                 for (var j = 1; j < 16; j++) {
                     result.datasets[j - 1].data.push(data[i]['Aplucke' + j]);
                 }
@@ -296,7 +301,7 @@
                     chart = new Chart(ctx, {
                         animation: false,
                         type: 'line',
-                        data: newData,
+                        // data: newData,
                         options: {
                             animation: {
                                 duration: 0

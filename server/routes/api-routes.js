@@ -87,18 +87,18 @@ module.exports = (app) => {
 
     app.route('/')
         .get(loadPageController.homepage);
-    app.route('/LichSuBangBieu/LunSau')
-        .get(loadPageController.lichSuBangBieu_LunSau);
-    app.route('/LichSuBangBieu/BienDangKheCoGian')
-        .get(loadPageController.lichSuBangBieu_BienDangKheCoGian);
-    app.route('/LichSuBangBieu/ApLucKeRong')
-        .get(loadPageController.lichSuBangBieu_ApLucKeRong);
-    app.route('/LichSuBangBieu/QuanTracTham')
-        .get(loadPageController.lichSuBangBieu_QuanTracTham);
-    app.route('/LichSuBangBieu/ApLucMachDong')
-        .get(loadPageController.lichSuBangBieu_ApLucMachDong);
-    app.route('/LichSuBangBieu/UngSuatCotThep')
-        .get(loadPageController.lichSuBangBieu_UngSuatCotThep);
+    app.route('/LichSuDuLieu/LunSau')
+        .get(loadPageController.LichSuDuLieu_LunSau);
+    app.route('/LichSuDuLieu/BienDangKheCoGian')
+        .get(loadPageController.LichSuDuLieu_BienDangKheCoGian);
+    app.route('/LichSuDuLieu/ApLucKeRong')
+        .get(loadPageController.LichSuDuLieu_ApLucKeRong);
+    app.route('/LichSuDuLieu/QuanTracTham')
+        .get(loadPageController.LichSuDuLieu_QuanTracTham);
+    app.route('/LichSuDuLieu/ApLucMachDong')
+        .get(loadPageController.LichSuDuLieu_ApLucMachDong);
+    app.route('/LichSuDuLieu/UngSuatCotThep')
+        .get(loadPageController.LichSuDuLieu_UngSuatCotThep);
 
     app.route('/BangBieu')
         .get(dataController.BangBieu);

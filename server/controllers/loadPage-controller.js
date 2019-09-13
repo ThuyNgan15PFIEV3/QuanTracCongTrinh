@@ -7,40 +7,40 @@ export default class LoadPageController {
             path: '/'
         });
     };
-    lichSuBangBieu_LunSau = async(req, res, next) => {
-        res.render('LichSuBangBieu_LunSau', {
+    LichSuDuLieu_LunSau = async(req, res, next) => {
+        res.render('LichSuDuLieu_LunSau', {
             pageTitle: 'Lún sâu',
-            path: '/LichSuBangBieu/LunSau'
+            path: '/LichSuDuLieu/LunSau'
         });
     };
-    lichSuBangBieu_BienDangKheCoGian = async(req, res, next) => {
-        res.render('LichSuBangBieu_BienDangKheCoGian', {
+    LichSuDuLieu_BienDangKheCoGian = async(req, res, next) => {
+        res.render('LichSuDuLieu_BienDangKheCoGian', {
             pageTitle: 'Biến dạng khe co giãn',
-            path: '/LichSuBangBieu/BienDangKheCoGian'
+            path: '/LichSuDuLieu/BienDangKheCoGian'
         });
     };
-    lichSuBangBieu_ApLucKeRong = async(req, res, next) => {
-        res.render('LichSuBangBieu_ApLucKeRong', {
+    LichSuDuLieu_ApLucKeRong = async(req, res, next) => {
+        res.render('LichSuDuLieu_ApLucKeRong', {
             pageTitle: 'Áp lực kẻ rỗng',
-            path: '/LichSuBangBieu/ApLucKeRong'
+            path: '/LichSuDuLieu/ApLucKeRong'
         });
     };
-    lichSuBangBieu_QuanTracTham = async(req, res, next) => {
-        res.render('LichSuBangBieu_QuanTracTham', {
+    LichSuDuLieu_QuanTracTham = async(req, res, next) => {
+        res.render('LichSuDuLieu_QuanTracTham', {
             pageTitle: 'Quan trắc thấm',
-            path: '/LichSuBangBieu/QuanTracTham'
+            path: '/LichSuDuLieu/QuanTracTham'
         });
     };
-    lichSuBangBieu_ApLucMachDong = async(req, res, next) => {
-        res.render('LichSuBangBieu_ApLucMachDong', {
+    LichSuDuLieu_ApLucMachDong = async(req, res, next) => {
+        res.render('LichSuDuLieu_ApLucMachDong', {
             pageTitle: 'Áp lực mạch động',
-            path: '/LichSuBangBieu/ApLucMachDong'
+            path: '/LichSuDuLieu/ApLucMachDong'
         });
     };
-    lichSuBangBieu_UngSuatCotThep = async(req, res, next) => {
-        res.render('LichSuBangBieu_UngSuatCotThep', {
+    LichSuDuLieu_UngSuatCotThep = async(req, res, next) => {
+        res.render('LichSuDuLieu_UngSuatCotThep', {
             pageTitle: 'Ứng suất cốt thép',
-            path: '/LichSuBangBieu/UngSuatCotThep'
+            path: '/LichSuDuLieu/UngSuatCotThep'
         });
     };
     Users = async(req, res, next) => {
